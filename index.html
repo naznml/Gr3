@@ -993,11 +993,80 @@
       white-space: nowrap;
     }
 
+    .map-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .map-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 12px 28px rgba(76, 29, 149, 0.08);
+      transition: 0.22s ease;
+    }
+
+    .map-row:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(76, 29, 149, 0.12);
+    }
+
+    .map-num {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 10px 22px rgba(124, 58, 237, 0.2);
+    }
+
+    .map-content h3 {
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 3px;
+    }
+
+    .map-subtitle {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .map-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .map-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+
     .back-to-top {
       position: fixed;
       right: 18px;
-      bottom: 18px;
-      z-index: 999;
+      bottom: 92px;
+      z-index: 9999;
       width: 46px;
       height: 46px;
       border-radius: 999px;
@@ -1210,10 +1279,10 @@
 
         <aside class="stats-panel">
           <div class="stat-card">
-            <div class="stat-number">5</div>
+            <div class="stat-number">3</div>
             <div class="stat-label">
-              <span class="inline-lang" data-lang="kk">&#1073;&#1110;&#1088; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072;&#1171;&#1099; &#1199;&#1083;&#1082;&#1077;&#1085; grammar blocks</span>
-              <span class="inline-lang" data-lang="ru">&#1073;&#1086;&#1083;&#1100;&#1096;&#1080;&#1093; grammar blocks &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
+              <span class="inline-lang" data-lang="kk">&#1073;&#1110;&#1088; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072;&#1171;&#1099; 3 &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; grammar block</span>
+              <span class="inline-lang" data-lang="ru">3 &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1093; grammar block &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
             </div>
           </div>
 
@@ -1244,204 +1313,71 @@
               <span class="inline-lang" data-lang="kk">&#1057;&#1072;&#1081;&#1090; &#1082;&#1072;&#1088;&#1090;&#1072;&#1089;&#1099;</span>
               <span class="inline-lang" data-lang="ru">&#1050;&#1072;&#1088;&#1090;&#1072; &#1089;&#1072;&#1081;&#1090;&#1072;</span>
             </div>
-
             <h2 class="section-title">
-              <span class="inline-lang" data-lang="kk">&#1041;&#1201;&#1083; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072; &#1257;&#1090;&#1077;&#1090;&#1110;&#1085; 5 &#1199;&#1083;&#1082;&#1077;&#1085; &#1073;&#1257;&#1083;&#1110;&#1084;</span>
-              <span class="inline-lang" data-lang="ru">5 &#1073;&#1086;&#1083;&#1100;&#1096;&#1080;&#1093; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1086;&#1074; &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
+              <span class="inline-lang" data-lang="kk">&#1041;&#1201;&#1083; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072; &#1257;&#1090;&#1077;&#1090;&#1110;&#1085; 3 &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1073;&#1257;&#1083;&#1110;&#1084;</span>
+              <span class="inline-lang" data-lang="ru">3 &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1093; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1072; &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
             </h2>
-
             <p class="section-desc">
-              <span class="inline-lang" data-lang="kk">
-                &#1050;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1072;&#1085;&#1099; &#1073;&#1072;&#1089;&#1179;&#1072;&#1085;&#1076;&#1072;, &#1089;&#1072;&#1081;&#1090; &#1073;&#1110;&#1088;&#1076;&#1077;&#1085; &#1089;&#1086;&#1083; &#1073;&#1257;&#1083;&#1110;&#1084;&#1075;&#1077; &#1090;&#1199;&#1089;&#1077;&#1076;&#1110;. &#1058;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;&#1076;&#1072; &#1082;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1072;&#1083;&#1072;&#1088;&#1076;&#1099; &#1086;&#1187;&#1171;&#1072;-&#1089;&#1086;&#1083;&#1171;&#1072; &#1089;&#1099;&#1088;&#1171;&#1099;&#1090;&#1099;&#1087; &#1082;&#1257;&#1088;&#1091;&#1075;&#1077; &#1073;&#1086;&#1083;&#1072;&#1076;&#1099;.
-              </span>
-              <span class="inline-lang" data-lang="ru">
-                &#1053;&#1072;&#1078;&#1084;&#1080;&#1090;&#1077; &#1085;&#1072; &#1082;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1091;, &#1080; &#1089;&#1072;&#1081;&#1090; &#1087;&#1077;&#1088;&#1077;&#1081;&#1076;&#1105;&#1090; &#1082; &#1085;&#1091;&#1078;&#1085;&#1086;&#1084;&#1091; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1091;. &#1053;&#1072; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;&#1077; &#1082;&#1072;&#1088;&#1090;&#1086;&#1095;&#1082;&#1080; &#1084;&#1086;&#1078;&#1085;&#1086; &#1083;&#1080;&#1089;&#1090;&#1072;&#1090;&#1100; &#1089;&#1074;&#1072;&#1081;&#1087;&#1086;&#1084;.
-              </span>
+              <span class="inline-lang" data-lang="kk">&#1041;&#1201;&#1083; &#1082;&#1072;&#1088;&#1090;&#1072; &#1179;&#1099;&#1089;&#1179;&#1072; &#1085;&#1072;&#1074;&#1080;&#1075;&#1072;&#1094;&#1080;&#1103; &#1088;&#1077;&#1090;&#1110;&#1085;&#1076;&#1077; &#1073;&#1077;&#1088;&#1110;&#1083;&#1076;&#1110;. &#1240;&#1088; &#1078;&#1086;&#1083;&#1076;&#1072; &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; rule groups &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1110;&#1083;&#1077;&#1076;&#1110;.</span>
+              <span class="inline-lang" data-lang="ru">&#1069;&#1090;&#1072; &#1082;&#1072;&#1088;&#1090;&#1072; &#1089;&#1076;&#1077;&#1083;&#1072;&#1085;&#1072; &#1082;&#1072;&#1082; &#1082;&#1086;&#1084;&#1087;&#1072;&#1082;&#1090;&#1085;&#1072;&#1103; &#1085;&#1072;&#1074;&#1080;&#1075;&#1072;&#1094;&#1080;&#1103;. &#1042; &#1082;&#1072;&#1078;&#1076;&#1086;&#1081; &#1089;&#1090;&#1088;&#1086;&#1082;&#1077; &#1074;&#1080;&#1076;&#1085;&#1099; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1077; rule groups.</span>
             </p>
           </div>
         </div>
 
-        <div class="rules-track-wrap">
-          <div class="rules-track">
-            <a class="rule-card" href="#adverb">
-              <div class="rule-icon">Adv</div>
+        <div class="map-list">
+          <a class="map-row" href="#adverb">
+            <div class="map-num">1</div>
+            <div class="map-content">
               <h3>Adverb</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span>
-                <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span>
+              <div class="map-subtitle"><span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span><span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span></div>
+              <div class="map-tags">
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Adverb vs Adjective &#8212; &#1199;&#1089;&#1090;&#1077;&#1091; &#1084;&#1077;&#1085; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084; &#1072;&#1081;&#1099;&#1088;&#1084;&#1072;&#1089;&#1099;</span><span class="inline-lang" data-lang="ru">Adverb vs Adjective &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1080; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Frequency &#8212; &#1078;&#1080;&#1110;&#1083;&#1110;&#1082;</span><span class="inline-lang" data-lang="ru">Frequency &#8212; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1100;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Time and Place &#8212; &#1091;&#1072;&#1179;&#1099;&#1090; &#1078;&#1241;&#1085;&#1077; &#1086;&#1088;&#1099;&#1085;</span><span class="inline-lang" data-lang="ru">Time and Place &#8212; &#1074;&#1088;&#1077;&#1084;&#1103; &#1080; &#1084;&#1077;&#1089;&#1090;&#1086;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Degree &#8212; &#1076;&#1241;&#1088;&#1077;&#1078;&#1077;</span><span class="inline-lang" data-lang="ru">Degree &#8212; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1100;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Position &#8212; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1075;&#1110; &#1086;&#1088;&#1085;&#1099;</span><span class="inline-lang" data-lang="ru">Position &#8212; &#1084;&#1077;&#1089;&#1090;&#1086; &#1074; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080;</span></span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#1240;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1083;&#1072;&#1081;, &#1179;&#1072;&#1096;&#1072;&#1085;, &#1179;&#1072;&#1081; &#1078;&#1077;&#1088;&#1076;&#1077;, &#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099; &#1078;&#1080;&#1110; &#1078;&#1072;&#1089;&#1072;&#1083;&#1072;&#1090;&#1099;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1090;&#1110;&#1085; &#1089;&#1257;&#1079;&#1076;&#1077;&#1088;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1057;&#1083;&#1086;&#1074;&#1072;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1077; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090;, &#1082;&#1072;&#1082;, &#1082;&#1086;&#1075;&#1076;&#1072;, &#1075;&#1076;&#1077; &#1080;&#1083;&#1080; &#1085;&#1072;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1095;&#1072;&#1089;&#1090;&#1086; &#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;.
-                </span>
-              </p>
-              <div class="rule-tags">
-                <span class="rule-tag">good / well</span><span class="rule-tag">hard / hardly</span><span class="rule-tag">frequency</span><span class="rule-tag">degree</span><span class="rule-tag">too / enough</span><span class="rule-tag">near / nearly</span>
-              </div>
-              <div class="rule-meta">
-                <span class="pill">A1&#8211;B1</span>
-                <span class="pill">6 rule groups</span>
-                <span class="pill">Tests</span>
-              </div>
-            </a>
+            </div>
+          </a>
 
-            <a class="rule-card" href="#preposition">
-              <div class="rule-icon">Prep</div>
+          <a class="map-row" href="#preposition">
+            <div class="map-num">2</div>
+            <div class="map-content">
               <h3>Preposition</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span>
-                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span>
+              <div class="map-subtitle"><span class="inline-lang" data-lang="kk">&#1040;&#1171;&#1099;&#1083;&#1096;&#1099;&#1085; &#1090;&#1110;&#1083;&#1110;&#1085;&#1076;&#1077;&#1075;&#1110; preposition</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span></div>
+              <div class="map-tags">
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Time &#8212; &#1091;&#1072;&#1179;&#1099;&#1090;: in, on, at</span><span class="inline-lang" data-lang="ru">Time &#8212; &#1074;&#1088;&#1077;&#1084;&#1103;: in, on, at</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Place &#8212; &#1086;&#1088;&#1099;&#1085;: in, on, at</span><span class="inline-lang" data-lang="ru">Place &#8212; &#1084;&#1077;&#1089;&#1090;&#1086;: in, on, at</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Movement &#8212; &#1073;&#1072;&#1171;&#1099;&#1090; &#1179;&#1086;&#1079;&#1171;&#1072;&#1083;&#1099;&#1089;&#1099;</span><span class="inline-lang" data-lang="ru">Movement &#8212; &#1076;&#1074;&#1080;&#1078;&#1077;&#1085;&#1080;&#1077;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Fixed Combinations &#8212; &#1090;&#1201;&#1088;&#1072;&#1179;&#1090;&#1099; &#1090;&#1110;&#1088;&#1082;&#1077;&#1089;&#1090;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">Fixed Combinations &#8212; &#1091;&#1089;&#1090;&#1086;&#1081;&#1095;&#1080;&#1074;&#1099;&#1077; &#1089;&#1086;&#1095;&#1077;&#1090;&#1072;&#1085;&#1080;&#1103;</span></span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#1059;&#1072;&#1179;&#1099;&#1090;, &#1086;&#1088;&#1099;&#1085;, &#1073;&#1072;&#1171;&#1099;&#1090; &#1078;&#1241;&#1085;&#1077; &#1090;&#1201;&#1088;&#1072;&#1179;&#1090;&#1099; &#1090;&#1110;&#1088;&#1082;&#1077;&#1089;&#1090;&#1077;&#1088;&#1076;&#1077;&#1075;&#1110; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;&#1090;&#1072;&#1088;&#1076;&#1099; &#1076;&#1201;&#1088;&#1099;&#1089; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1091;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;&#1077; &#1091;&#1087;&#1086;&#1090;&#1088;&#1077;&#1073;&#1083;&#1077;&#1085;&#1080;&#1077; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;&#1086;&#1074; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;, &#1084;&#1077;&#1089;&#1090;&#1072;, &#1085;&#1072;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1103; &#1080; &#1091;&#1089;&#1090;&#1086;&#1081;&#1095;&#1080;&#1074;&#1099;&#1093; &#1089;&#1086;&#1095;&#1077;&#1090;&#1072;&#1085;&#1080;&#1081;.
-                </span>
-              </p>
-              <div class="rule-tags">
-                <span class="rule-tag">in / on / at</span><span class="rule-tag">on weekends</span><span class="rule-tag">in holidays</span><span class="rule-tag">arrive in / at</span><span class="rule-tag">look after</span><span class="rule-tag">keen on</span>
-              </div>
-              <div class="rule-meta">
-                <span class="pill">A1&#8211;B2</span>
-                <span class="pill">6 rule groups</span>
-                <span class="pill">Tests</span>
-              </div>
-            </a>
+            </div>
+          </a>
 
-            <a class="rule-card" href="#conjunction">
-              <div class="rule-icon">Conj</div>
+          <a class="map-row" href="#conjunction">
+            <div class="map-num">3</div>
+            <div class="map-content">
               <h3>Conjunction</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;</span>
-                <span class="inline-lang" data-lang="ru">&#1057;&#1086;&#1102;&#1079;</span>
+              <div class="map-subtitle"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;</span><span class="inline-lang" data-lang="ru">&#1057;&#1086;&#1102;&#1079;</span></div>
+              <div class="map-tags">
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Coordinating &#8212; and, but, or, so</span><span class="inline-lang" data-lang="ru">Coordinating &#8212; and, but, or, so</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Subordinating &#8212; because, although, if</span><span class="inline-lang" data-lang="ru">Subordinating &#8212; because, although, if</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Correlative &#8212; both...and, either...or</span><span class="inline-lang" data-lang="ru">Correlative &#8212; both...and, either...or</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Linkers &#8212; however, therefore, despite</span><span class="inline-lang" data-lang="ru">Linkers &#8212; however, therefore, despite</span></span>
               </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">
-                  &#1057;&#1257;&#1079;&#1076;&#1077;&#1088;&#1076;&#1110;, &#1090;&#1110;&#1088;&#1082;&#1077;&#1089;&#1090;&#1077;&#1088;&#1076;&#1110; &#1078;&#1241;&#1085;&#1077; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1088;&#1076;&#1110; &#1073;&#1072;&#1081;&#1083;&#1072;&#1085;&#1099;&#1089;&#1090;&#1099;&#1088;&#1072;&#1090;&#1099;&#1085; &#1078;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;&#1090;&#1072;&#1088;.
-                </span>
-                <span class="inline-lang" data-lang="ru">
-                  &#1057;&#1086;&#1102;&#1079;&#1099;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1077; &#1089;&#1086;&#1077;&#1076;&#1080;&#1085;&#1103;&#1102;&#1090; &#1089;&#1083;&#1086;&#1074;&#1072;, &#1092;&#1088;&#1072;&#1079;&#1099; &#1080; &#1095;&#1072;&#1089;&#1090;&#1080; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;.
-                </span>
-              </p>
-              <div class="rule-tags">
-                <span class="rule-tag">and / but / or</span><span class="rule-tag">because</span><span class="rule-tag">although</span><span class="rule-tag">if / when</span><span class="rule-tag">both...and</span><span class="rule-tag">however</span>
-              </div>
-              <div class="rule-meta">
-                <span class="pill">A2&#8211;B2</span>
-                <span class="pill">5 rule groups</span>
-                <span class="pill">Tests</span>
-              </div>
-            </a>
-
-            <a class="rule-card" href="#exam-structures">
-              <div class="rule-icon">Ex</div>
-              <h3>Exam Structures</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1045;&#1084;&#1090;&#1080;&#1093;&#1072;&#1085;&#1076;&#1099;&#1179; &#1179;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088;</span>
-                <span class="inline-lang" data-lang="ru">&#1069;&#1082;&#1079;&#1072;&#1084;&#1077;&#1085;&#1072;&#1094;&#1080;&#1086;&#1085;&#1085;&#1099;&#1077; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080;</span>
-              </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">&#1057;&#1201;&#1088;&#1072;&#1179; &#1090;&#1241;&#1088;&#1090;&#1110;&#1073;&#1110;, reported speech &#1078;&#1241;&#1085;&#1077; what/how &#1089;&#1080;&#1103;&#1179;&#1090;&#1099; &#1090;&#1077;&#1089;&#1090;&#1090;&#1077; &#1078;&#1080;&#1110; &#1082;&#1077;&#1083;&#1077;&#1090;&#1110;&#1085; &#1179;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088;.</span>
-                <span class="inline-lang" data-lang="ru">&#1055;&#1086;&#1088;&#1103;&#1076;&#1086;&#1082; &#1089;&#1083;&#1086;&#1074;, reported speech &#1080; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080; what/how, &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1077; &#1095;&#1072;&#1089;&#1090;&#1086; &#1074;&#1089;&#1090;&#1088;&#1077;&#1095;&#1072;&#1102;&#1090;&#1089;&#1103; &#1074; &#1090;&#1077;&#1089;&#1090;&#1072;&#1093;.</span>
-              </p>
-              <div class="rule-tags">
-                <span class="rule-tag">indirect questions</span><span class="rule-tag">reported speech</span><span class="rule-tag">what / how</span><span class="rule-tag">word order</span>
-              </div>
-              <div class="rule-meta">
-                <span class="pill">B1</span>
-                <span class="pill">Exam</span>
-                <span class="pill">Tests</span>
-              </div>
-            </a>
-
-            <a class="rule-card" href="#vocabulary-skills">
-              <div class="rule-icon">Voc</div>
-              <h3>Vocabulary Skills</h3>
-              <div class="rule-mini">
-                <span class="inline-lang" data-lang="kk">&#1057;&#1257;&#1079;&#1076;&#1110;&#1082; &#1076;&#1072;&#1171;&#1076;&#1099;&#1083;&#1072;&#1088;</span>
-                <span class="inline-lang" data-lang="ru">&#1051;&#1077;&#1082;&#1089;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1077; &#1085;&#1072;&#1074;&#1099;&#1082;&#1080;</span>
-              </div>
-              <p>
-                <span class="inline-lang" data-lang="kk">&#1057;&#1080;&#1085;&#1086;&#1085;&#1080;&#1084;, &#1072;&#1085;&#1090;&#1086;&#1085;&#1080;&#1084;, &#1089;&#1257;&#1079; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;&#1089;&#1099; &#1078;&#1241;&#1085;&#1077; confusing words &#1072;&#1088;&#1179;&#1099;&#1083;&#1099; &#1083;&#1077;&#1082;&#1089;&#1080;&#1082;&#1072;&#1083;&#1099;&#1179; &#1089;&#1201;&#1088;&#1072;&#1179;&#1090;&#1072;&#1088;&#1171;&#1072; &#1076;&#1072;&#1081;&#1099;&#1085;&#1076;&#1099;&#1179;.</span>
-                <span class="inline-lang" data-lang="ru">&#1055;&#1086;&#1076;&#1075;&#1086;&#1090;&#1086;&#1074;&#1082;&#1072; &#1082; &#1083;&#1077;&#1082;&#1089;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1084; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;&#1072;&#1084;: &#1089;&#1080;&#1085;&#1086;&#1085;&#1080;&#1084;&#1099;, &#1072;&#1085;&#1090;&#1086;&#1085;&#1080;&#1084;&#1099;, &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077; &#1089;&#1083;&#1086;&#1074;&#1072; &#1080; confusing words.</span>
-              </p>
-              <div class="rule-tags">
-                <span class="rule-tag">synonym</span><span class="rule-tag">antonym</span><span class="rule-tag">word meaning</span><span class="rule-tag">near / nearly</span><span class="rule-tag">opportunity = chance</span>
-              </div>
-              <div class="rule-meta">
-                <span class="pill">B1</span>
-                <span class="pill">Lexis</span>
-                <span class="pill">Tests</span>
-              </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
     <nav class="sticky-nav" aria-label="Grammar navigation">
       <div class="nav-scroll">
-        <a class="nav-item" href="#rules-map">
-          <span class="nav-main">Overview</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1087;&#1099; &#1082;&#1072;&#1088;&#1090;&#1072;</span>
-            <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1097;&#1072;&#1103; &#1082;&#1072;&#1088;&#1090;&#1072;</span>
-          </span>
-        </a>
-
-        <a class="nav-item" href="#adverb">
-          <span class="nav-main">Adverb</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span>
-            <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span>
-          </span>
-        </a>
-
-        <a class="nav-item" href="#preposition">
-          <span class="nav-main">Preposition</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span>
-            <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span>
-          </span>
-        </a>
-
-        <a class="nav-item" href="#conjunction">
-          <span class="nav-main">Conjunction</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;</span>
-            <span class="inline-lang" data-lang="ru">&#1057;&#1086;&#1102;&#1079;</span>
-          </span>
-        </a>
-
-
-        <a class="nav-item" href="#exam-structures">
-          <span class="nav-main">Exam Structures</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1178;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088;</span>
-            <span class="inline-lang" data-lang="ru">&#1050;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080;</span>
-          </span>
-        </a>
-
-        <a class="nav-item" href="#vocabulary-skills">
-          <span class="nav-main">Vocabulary</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1057;&#1257;&#1079;&#1076;&#1110;&#1082;</span>
-            <span class="inline-lang" data-lang="ru">&#1051;&#1077;&#1082;&#1089;&#1080;&#1082;&#1072;</span>
-          </span>
-        </a>
-
-        <a class="nav-item" href="#final-test">
-          <span class="nav-main">Final Test</span>
-          <span class="nav-sub">
-            <span class="inline-lang" data-lang="kk">&#1178;&#1086;&#1088;&#1099;&#1090;&#1099;&#1085;&#1076;&#1099; &#1090;&#1077;&#1089;&#1090;</span>
-            <span class="inline-lang" data-lang="ru">&#1048;&#1090;&#1086;&#1075;&#1086;&#1074;&#1099;&#1081; &#1090;&#1077;&#1089;&#1090;</span>
-          </span>
-        </a>
+        <a class="nav-item" href="#rules-map"><span class="nav-main">Overview</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1087;&#1099; &#1082;&#1072;&#1088;&#1090;&#1072;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1097;&#1072;&#1103; &#1082;&#1072;&#1088;&#1090;&#1072;</span></span></a>
+        <a class="nav-item" href="#adverb"><span class="nav-main">Adverb</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span><span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span></span></a>
+        <a class="nav-item" href="#preposition"><span class="nav-main">Preposition</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">Preposition</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span></span></a>
+        <a class="nav-item" href="#conjunction"><span class="nav-main">Conjunction</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;</span><span class="inline-lang" data-lang="ru">&#1057;&#1086;&#1102;&#1079;</span></span></a>
+        <a class="nav-item" href="#final-test"><span class="nav-main">Final Test</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1178;&#1086;&#1088;&#1099;&#1090;&#1099;&#1085;&#1076;&#1099; &#1090;&#1077;&#1089;&#1090;</span><span class="inline-lang" data-lang="ru">&#1048;&#1090;&#1086;&#1075;&#1086;&#1074;&#1099;&#1081; &#1090;&#1077;&#1089;&#1090;</span></span></a>
       </div>
     </nav>
         <section class="grammar-section" id="adverb">
@@ -4516,46 +4452,114 @@
       </div>
     </section>
 
-        <section class="grammar-section" id="exam-structures">
+
+
+    <section class="grammar-section" id="final-test">
       <div class="page-shell">
         <div class="grammar-hero">
           <div class="grammar-title-card">
-            <div class="section-kicker">Rule 11 &#183; B1</div>
-            <h2>Exam Structures</h2>
-            <div class="translation">
-              <span class="inline-lang" data-lang="kk">&#1045;&#1084;&#1090;&#1080;&#1093;&#1072;&#1085;&#1076;&#1099;&#1179; &#1179;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088;</span>
-              <span class="inline-lang" data-lang="ru">&#1069;&#1082;&#1079;&#1072;&#1084;&#1077;&#1085;&#1072;&#1094;&#1080;&#1086;&#1085;&#1085;&#1099;&#1077; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080;</span>
-            </div>
+            <div class="section-kicker">Final Practice</div>
+            <h2>Final Test</h2>
+            <div class="translation"><span class="inline-lang" data-lang="kk">&#1178;&#1086;&#1088;&#1099;&#1090;&#1099;&#1085;&#1076;&#1099; &#1090;&#1077;&#1089;&#1090;</span><span class="inline-lang" data-lang="ru">&#1048;&#1090;&#1086;&#1075;&#1086;&#1074;&#1099;&#1081; &#1090;&#1077;&#1089;&#1090;</span></div>
           </div>
           <div class="grammar-info-card">
-            <div class="lang-content" data-lang="kk"><p>&#1041;&#1201;&#1083; &#1073;&#1257;&#1083;&#1110;&#1084;&#1076;&#1077; PDF &#1090;&#1077;&#1089;&#1090;&#1090;&#1077;&#1088;&#1110;&#1085;&#1076;&#1077; &#1082;&#1077;&#1079;&#1076;&#1077;&#1089;&#1077;&#1090;&#1110;&#1085;, &#1073;&#1110;&#1088;&#1072;&#1179; &#1078;&#1077;&#1082;&#1077; &#1199;&#1083;&#1082;&#1077;&#1085; grammar &#1090;&#1072;&#1179;&#1099;&#1088;&#1099;&#1087;&#1090;&#1072;&#1088;&#1099;&#1085;&#1072; &#1089;&#1099;&#1081;&#1084;&#1072;&#1081;&#1090;&#1099;&#1085; &#1179;&#1201;&#1088;&#1099;&#1083;&#1099;&#1084;&#1076;&#1072;&#1088; &#1078;&#1080;&#1085;&#1072;&#1083;&#1171;&#1072;&#1085;: indirect questions, reported speech, exclamatory sentences &#1078;&#1241;&#1085;&#1077; word order.</p></div>
-            <div class="lang-content" data-lang="ru"><p>&#1042; &#1101;&#1090;&#1086;&#1084; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1077; &#1089;&#1086;&#1073;&#1088;&#1072;&#1085;&#1099; &#1082;&#1086;&#1085;&#1089;&#1090;&#1088;&#1091;&#1082;&#1094;&#1080;&#1080; &#1080;&#1079; PDF-&#1090;&#1077;&#1089;&#1090;&#1086;&#1074;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1099;&#1077; &#1085;&#1077; &#1074;&#1089;&#1077;&#1075;&#1076;&#1072; &#1091;&#1076;&#1086;&#1073;&#1085;&#1086; &#1086;&#1090;&#1085;&#1086;&#1089;&#1080;&#1090;&#1100; &#1082; &#1086;&#1076;&#1085;&#1086;&#1081; &#1073;&#1086;&#1083;&#1100;&#1096;&#1086;&#1081; &#1090;&#1077;&#1084;&#1077;: indirect questions, reported speech, exclamatory sentences &#1080; &#1087;&#1086;&#1088;&#1103;&#1076;&#1086;&#1082; &#1089;&#1083;&#1086;&#1074;.</p></div>
-            <div class="subunit-grid">
-              <a class="subunit-chip" href="#exam-indirect"><strong>Indirect Questions</strong><span><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1085;&#1072;&#1084;&#1072; &#1089;&#1201;&#1088;&#1072;&#1179;&#1090;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1050;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1099;&#1077; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099;</span></span></a>
-              <a class="subunit-chip" href="#exam-reported"><strong>Reported Speech</strong><span><span class="inline-lang" data-lang="kk">&#1058;&#1257;&#1083; &#1089;&#1257;&#1079;&#1076;&#1110; &#1078;&#1077;&#1090;&#1082;&#1110;&#1079;&#1091;</span><span class="inline-lang" data-lang="ru">&#1050;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1072;&#1103; &#1088;&#1077;&#1095;&#1100;</span></span></a>
-              <a class="subunit-chip" href="#exam-exclamatory"><strong>What / How</strong><span><span class="inline-lang" data-lang="kk">&#1051;&#1077;&#1087;&#1090;&#1110; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1042;&#1086;&#1089;&#1082;&#1083;&#1080;&#1094;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;</span></span></a>
-            </div>
+            <div class="lang-content" data-lang="kk"><p>&#1041;&#1201;&#1083; &#1179;&#1086;&#1088;&#1099;&#1090;&#1099;&#1085;&#1076;&#1099; &#1073;&#1257;&#1083;&#1110;&#1084;&#1076;&#1077; <b>Adverb</b>, <b>Preposition</b>, <b>Conjunction</b> &#1090;&#1072;&#1179;&#1099;&#1088;&#1099;&#1087;&#1090;&#1072;&#1088;&#1099; &#1072;&#1088;&#1072;&#1083;&#1072;&#1089; &#1090;&#1199;&#1088;&#1076;&#1077; &#1073;&#1077;&#1088;&#1110;&#1083;&#1077;&#1076;&#1110;.</p></div>
+            <div class="lang-content" data-lang="ru"><p>&#1042; &#1101;&#1090;&#1086;&#1084; &#1080;&#1090;&#1086;&#1075;&#1086;&#1074;&#1086;&#1084; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1077; &#1089;&#1084;&#1077;&#1096;&#1072;&#1085;&#1099; &#1090;&#1077;&#1084;&#1099; <b>Adverb</b>, <b>Preposition</b>, <b>Conjunction</b>.</p></div>
           </div>
         </div>
-
-        <article class="subunit" id="exam-indirect">
-          <div class="subunit-header"><div class="subunit-label">Exam Structures &#183; Sub-unit 1</div><h3>Indirect Questions</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1085;&#1072;&#1084;&#1072; &#1089;&#1201;&#1088;&#1072;&#1179;&#1090;&#1072;&#1088;</span><span class="inline-lang" data-lang="ru">&#1050;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1099;&#1077; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;&#1099;</span></div></div>
+        <article class="subunit">
+          <div class="subunit-header"><div class="subunit-label">Mixed Practice</div><h3>Adverb &#183; Preposition &#183; Conjunction</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">&#1040;&#1088;&#1072;&#1083;&#1072;&#1089; &#1090;&#1077;&#1089;&#1090;</span><span class="inline-lang" data-lang="ru">&#1057;&#1084;&#1077;&#1096;&#1072;&#1085;&#1085;&#1099;&#1081; &#1090;&#1077;&#1089;&#1090;</span></div></div>
           <div class="subunit-body">
-            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p>After phrases like <b>I want to know</b>, <b>Do you know</b>, <b>Can you tell me</b>, the word order is not question order. Use normal sentence order: question word + subject + verb.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h4><div class="lang-content" data-lang="kk"><p><b>Indirect question</b> &#8212; &#1090;&#1091;&#1088;&#1072; &#1089;&#1201;&#1088;&#1072;&#1179; &#1077;&#1084;&#1077;&#1089;, &#1073;&#1072;&#1089;&#1179;&#1072; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1085;&#1110;&#1187; &#1110;&#1096;&#1110;&#1085;&#1076;&#1077; &#1090;&#1201;&#1088;&#1171;&#1072;&#1085; &#1089;&#1201;&#1088;&#1072;&#1179;. &#1057;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; &#1082;&#1257;&#1084;&#1077;&#1082;&#1096;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082; &#1072;&#1083;&#1076;&#1099;&#1171;&#1072; &#1096;&#1099;&#1179;&#1087;&#1072;&#1081;&#1076;&#1099;. <b>How far is it?</b> &#1090;&#1091;&#1088;&#1072; &#1089;&#1201;&#1088;&#1072;&#1179;, &#1072;&#1083; <b>She wants to know how far it is</b> &#8212; &#1078;&#1072;&#1085;&#1072;&#1084;&#1072; &#1089;&#1201;&#1088;&#1072;&#1179;.</p></div><div class="lang-content" data-lang="ru"><p><b>Indirect question</b> &#8212; &#1101;&#1090;&#1086; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089; &#1074;&#1085;&#1091;&#1090;&#1088;&#1080; &#1076;&#1088;&#1091;&#1075;&#1086;&#1075;&#1086; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;. &#1055;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1087;&#1086;&#1088;&#1103;&#1076;&#1086;&#1082; &#1089;&#1083;&#1086;&#1074; &#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1080;&#1090;&#1089;&#1103; &#1086;&#1073;&#1099;&#1095;&#1085;&#1099;&#1084;: &#1087;&#1086;&#1076;&#1083;&#1077;&#1078;&#1072;&#1097;&#1077;&#1077; &#1087;&#1077;&#1088;&#1077;&#1076; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1086;&#1084;. <b>How far is it?</b> &#8212; &#1087;&#1088;&#1103;&#1084;&#1086;&#1081; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;, &#1072; <b>She wants to know how far it is</b> &#8212; &#1082;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1099;&#1081; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;.</p></div></div></div>
-            <div class="formula-box"><div class="formula-main">Question word + subject + verb &#183; how far it is &#183; where she lives &#183; what he wants</div><div class="formula-translation"><span class="inline-lang" data-lang="kk">&#1040;&#1091;&#1076;&#1072;&#1088;&#1084;&#1072;: how far it is &#8212; &#1086;&#1085;&#1099;&#1187; &#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099; &#1072;&#1083;&#1099;&#1089; &#1077;&#1082;&#1077;&#1085;&#1110;&#1085;; where she lives &#8212; &#1086;&#1085;&#1099;&#1187; &#1179;&#1072;&#1081;&#1076;&#1072; &#1090;&#1201;&#1088;&#1072;&#1090;&#1099;&#1085;&#1099;&#1085;.</span><span class="inline-lang" data-lang="ru">&#1055;&#1077;&#1088;&#1077;&#1074;&#1086;&#1076;: how far it is &#8212; &#1085;&#1072;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1101;&#1090;&#1086; &#1076;&#1072;&#1083;&#1077;&#1082;&#1086;; where she lives &#8212; &#1075;&#1076;&#1077; &#1086;&#1085;&#1072; &#1078;&#1080;&#1074;&#1105;&#1090;.</span></div></div>
-            <div class="example-box"><p class="example-sentence">She wants to know <span class="mark signal">how far it is</span> from here to Edinburgh.</p><p class="example-note"><span class="inline-lang" data-lang="kk">&#1044;&#1201;&#1088;&#1099;&#1089;: how far it is. &#1178;&#1072;&#1090;&#1077;: how far is it.</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;: how far it is. &#1054;&#1096;&#1080;&#1073;&#1082;&#1072;: how far is it.</span></p></div>
-            <div class="mistake-box"><h4><span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span><span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span></h4><p><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1085;&#1072;&#1084;&#1072; &#1089;&#1201;&#1088;&#1072;&#1179;&#1090;&#1072; <b>do/does/did</b> &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;: Do you know where he lives? &#8212; &#1076;&#1201;&#1088;&#1099;&#1089;.</span><span class="inline-lang" data-lang="ru">&#1042; &#1082;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1086;&#1084; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089;&#1077; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1085;&#1077; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; <b>do/does/did</b>: Do you know where he lives? &#8212; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;.</span></p></div>
+            <div class="test-box" data-test="final-part3-test">
+              <div class="test-header"><h4>Final test &#183; Part 3</h4><span class="mini-badge">15 questions</span></div>
+              <div class="question" data-answer="b"><p>1. She speaks English ___.</p><div class="options"><label class="option"><input type="radio" name="f3-1" value="a"> good</label><label class="option"><input type="radio" name="f3-1" value="b"> well</label><label class="option"><input type="radio" name="f3-1" value="c"> better</label><label class="option"><input type="radio" name="f3-1" value="d"> best</label><label class="option"><input type="radio" name="f3-1" value="e"> nice</label></div></div>
+              <div class="question" data-answer="c"><p>2. I ___ go to bed before midnight.</p><div class="options"><label class="option"><input type="radio" name="f3-2" value="a"> careful</label><label class="option"><input type="radio" name="f3-2" value="b"> yesterday</label><label class="option"><input type="radio" name="f3-2" value="c"> usually</label><label class="option"><input type="radio" name="f3-2" value="d"> enough</label><label class="option"><input type="radio" name="f3-2" value="e"> very</label></div></div>
+              <div class="question" data-answer="d"><p>3. The task was ___ difficult for beginners.</p><div class="options"><label class="option"><input type="radio" name="f3-3" value="a"> many</label><label class="option"><input type="radio" name="f3-3" value="b"> well</label><label class="option"><input type="radio" name="f3-3" value="c"> often</label><label class="option"><input type="radio" name="f3-3" value="d"> too</label><label class="option"><input type="radio" name="f3-3" value="e"> near</label></div></div>
+              <div class="question" data-answer="a"><p>4. We try to relax ___ weekends.</p><div class="options"><label class="option"><input type="radio" name="f3-4" value="a"> on</label><label class="option"><input type="radio" name="f3-4" value="b"> in</label><label class="option"><input type="radio" name="f3-4" value="c"> at</label><label class="option"><input type="radio" name="f3-4" value="d"> by</label><label class="option"><input type="radio" name="f3-4" value="e"> from</label></div></div>
+              <div class="question" data-answer="c"><p>5. The meeting starts ___ 9 o'clock.</p><div class="options"><label class="option"><input type="radio" name="f3-5" value="a"> on</label><label class="option"><input type="radio" name="f3-5" value="b"> in</label><label class="option"><input type="radio" name="f3-5" value="c"> at</label><label class="option"><input type="radio" name="f3-5" value="d"> to</label><label class="option"><input type="radio" name="f3-5" value="e"> into</label></div></div>
+              <div class="question" data-answer="e"><p>6. She arrived ___ the airport early.</p><div class="options"><label class="option"><input type="radio" name="f3-6" value="a"> in</label><label class="option"><input type="radio" name="f3-6" value="b"> on</label><label class="option"><input type="radio" name="f3-6" value="c"> by</label><label class="option"><input type="radio" name="f3-6" value="d"> from</label><label class="option"><input type="radio" name="f3-6" value="e"> at</label></div></div>
+              <div class="question" data-answer="b"><p>7. He is interested ___ modern history.</p><div class="options"><label class="option"><input type="radio" name="f3-7" value="a"> on</label><label class="option"><input type="radio" name="f3-7" value="b"> in</label><label class="option"><input type="radio" name="f3-7" value="c"> at</label><label class="option"><input type="radio" name="f3-7" value="d"> for</label><label class="option"><input type="radio" name="f3-7" value="e"> with</label></div></div>
+              <div class="question" data-answer="d"><p>8. I stayed at home ___ it was raining.</p><div class="options"><label class="option"><input type="radio" name="f3-8" value="a"> although</label><label class="option"><input type="radio" name="f3-8" value="b"> but</label><label class="option"><input type="radio" name="f3-8" value="c"> so</label><label class="option"><input type="radio" name="f3-8" value="d"> because</label><label class="option"><input type="radio" name="f3-8" value="e"> however</label></div></div>
+              <div class="question" data-answer="a"><p>9. ___ the weather was cold, they continued walking.</p><div class="options"><label class="option"><input type="radio" name="f3-9" value="a"> Although</label><label class="option"><input type="radio" name="f3-9" value="b"> Because</label><label class="option"><input type="radio" name="f3-9" value="c"> So</label><label class="option"><input type="radio" name="f3-9" value="d"> Therefore</label><label class="option"><input type="radio" name="f3-9" value="e"> And</label></div></div>
+              <div class="question" data-answer="c"><p>10. ___ my sister and my brother can drive.</p><div class="options"><label class="option"><input type="radio" name="f3-10" value="a"> Either</label><label class="option"><input type="radio" name="f3-10" value="b"> Neither</label><label class="option"><input type="radio" name="f3-10" value="c"> Both</label><label class="option"><input type="radio" name="f3-10" value="d"> Although</label><label class="option"><input type="radio" name="f3-10" value="e"> However</label></div></div>
+              <div class="question" data-answer="b"><p>11. The museum was closed. ___, we walked around the old town.</p><div class="options"><label class="option"><input type="radio" name="f3-11" value="a"> Because</label><label class="option"><input type="radio" name="f3-11" value="b"> Therefore</label><label class="option"><input type="radio" name="f3-11" value="c"> Although</label><label class="option"><input type="radio" name="f3-11" value="d"> Either</label><label class="option"><input type="radio" name="f3-11" value="e"> Neither</label></div></div>
+              <div class="question" data-answer="e"><p>12. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="f3-12" value="a"> listen music</label><label class="option"><input type="radio" name="f3-12" value="b"> listen on music</label><label class="option"><input type="radio" name="f3-12" value="c"> listen at music</label><label class="option"><input type="radio" name="f3-12" value="d"> listen for music</label><label class="option"><input type="radio" name="f3-12" value="e"> listen to music</label></div></div>
+              <div class="question" data-answer="a"><p>13. Choose the correct phrase.</p><div class="options"><label class="option"><input type="radio" name="f3-13" value="a"> on foot</label><label class="option"><input type="radio" name="f3-13" value="b"> by foot</label><label class="option"><input type="radio" name="f3-13" value="c"> in foot</label><label class="option"><input type="radio" name="f3-13" value="d"> at foot</label><label class="option"><input type="radio" name="f3-13" value="e"> to foot</label></div></div>
+              <div class="question" data-answer="d"><p>14. She solved the problem ___.</p><div class="options"><label class="option"><input type="radio" name="f3-14" value="a"> careful</label><label class="option"><input type="radio" name="f3-14" value="b"> care</label><label class="option"><input type="radio" name="f3-14" value="c"> more careful</label><label class="option"><input type="radio" name="f3-14" value="d"> carefully</label><label class="option"><input type="radio" name="f3-14" value="e"> carefulness</label></div></div>
+              <div class="question" data-answer="b"><p>15. We will call you ___ we arrive.</p><div class="options"><label class="option"><input type="radio" name="f3-15" value="a"> because of</label><label class="option"><input type="radio" name="f3-15" value="b"> as soon as</label><label class="option"><input type="radio" name="f3-15" value="c"> despite</label><label class="option"><input type="radio" name="f3-15" value="d"> however</label><label class="option"><input type="radio" name="f3-15" value="e"> either</label></div></div>
+              <button class="check-btn" type="button" data-check="final-part3-test"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088;&#1076;&#1099; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1080;&#1090;&#1100; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;</span></button>
+              <div class="result-box" data-result="final-part3-test"><h5><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1084;&#1077;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h5><div class="lang-content" data-lang="kk"><p>&#1044;&#1201;&#1088;&#1099;&#1089; &#1078;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088; &#1078;&#1072;&#1089;&#1099;&#1083; &#1090;&#1199;&#1089;&#1087;&#1077;&#1085; &#1073;&#1077;&#1083;&#1075;&#1110;&#1083;&#1077;&#1085;&#1077;&#1076;&#1110;. &#1041;&#1201;&#1083; &#1090;&#1077;&#1089;&#1090; &#1199;&#1089;&#1090;&#1077;&#1091;, preposition &#1078;&#1241;&#1085;&#1077; &#1078;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;&#1090;&#1072;&#1088;&#1076;&#1099; &#1072;&#1088;&#1072;&#1083;&#1072;&#1089; &#1179;&#1072;&#1081;&#1090;&#1072;&#1083;&#1072;&#1081;&#1076;&#1099;.</p></div><div class="lang-content" data-lang="ru"><p>&#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1099;&#1077; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099; &#1073;&#1091;&#1076;&#1091;&#1090; &#1086;&#1090;&#1084;&#1077;&#1095;&#1077;&#1085;&#1099; &#1079;&#1077;&#1083;&#1105;&#1085;&#1099;&#1084;. &#1069;&#1090;&#1086;&#1090; &#1090;&#1077;&#1089;&#1090; &#1089;&#1084;&#1077;&#1096;&#1072;&#1085;&#1085;&#1086; &#1087;&#1086;&#1074;&#1090;&#1086;&#1088;&#1103;&#1077;&#1090; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103;, &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;&#1080; &#1080; &#1089;&#1086;&#1102;&#1079;&#1099;.</p></div></div>
+            </div>
           </div>
         </article>
+      </div>
+    </section>
+  </main>
 
-        <article class="subunit" id="exam-reported">
-          <div class="subunit-header"><div class="subunit-label">Exam Structures &#183; Sub-unit 2</div><h3>Reported Speech / Direct Speech</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">&#1058;&#1257;&#1083; &#1089;&#1257;&#1079; &#1078;&#1241;&#1085;&#1077; &#1090;&#1257;&#1083;&#1077;&#1091; &#1089;&#1257;&#1079;</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1103;&#1084;&#1072;&#1103; &#1080; &#1082;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1072;&#1103; &#1088;&#1077;&#1095;&#1100;</span></div></div>
-          <div class="subunit-body">
-            <div class="lesson-layout"><div class="lesson-box"><h4>English rule</h4><p>Reported speech tells what someone said without quotation marks. Direct speech gives the exact words in quotation marks.</p></div><div class="lesson-box"><h4><span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span></h4><div class="lang-content" data-lang="kk"><p><b>Direct speech</b> &#8212; &#1072;&#1076;&#1072;&#1084;&#1085;&#1099;&#1187; &#1085;&#1072;&#1179;&#1090;&#1099; &#1072;&#1081;&#1090;&#1179;&#1072;&#1085; &#1089;&#1257;&#1079;&#1110;. <b>Reported speech</b> &#8212; &#1089;&#1086;&#1083; &#1089;&#1257;&#1079;&#1076;&#1110; &#1073;&#1072;&#1089;&#1179;&#1072; &#1072;&#1076;&#1072;&#1084; &#1078;&#1077;&#1090;&#1082;&#1110;&#1079;&#1077;&#1076;&#1110;. &#1041;&#1201;&#1081;&#1088;&#1099;&#1179;&#1090;&#1072; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; <b>tell/ask + object + to V1</b>, &#1072;&#1083; &#1090;&#1099;&#1081;&#1099;&#1084;&#1076;&#1072; <b>not to V1</b> &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;.</p></div><div class="lang-content" data-lang="ru"><p><b>Direct speech</b> &#8212; &#1090;&#1086;&#1095;&#1085;&#1099;&#1077; &#1089;&#1083;&#1086;&#1074;&#1072; &#1095;&#1077;&#1083;&#1086;&#1074;&#1077;&#1082;&#1072;. <b>Reported speech</b> &#8212; &#1087;&#1077;&#1088;&#1077;&#1089;&#1082;&#1072;&#1079;. &#1042; &#1087;&#1088;&#1086;&#1089;&#1100;&#1073;&#1072;&#1093; &#1080; &#1087;&#1088;&#1080;&#1082;&#1072;&#1079;&#1072;&#1093; &#1095;&#1072;&#1089;&#1090;&#1086; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; <b>tell/ask + object + to V1</b>, &#1074; &#1079;&#1072;&#1087;&#1088;&#1077;&#1090;&#1077; &#8212; <b>not to V1</b>.</p></div></div></div>
-            <div class="formula-box"><div class="formula-main">Direct: &#8220;Don&#8217;t sit up late.&#8221; &#183; Reported: The doctor told him not to sit up late.</div><div class="formula-translation"><span class="inline-lang" data-lang="kk">Don&#8217;t sit up late &#8212; &#1082;&#1077;&#1096;&#1082;&#1077; &#1076;&#1077;&#1081;&#1110;&#1085; &#1086;&#1090;&#1099;&#1088;&#1084;&#1072;. not to sit up late &#8212; &#1082;&#1077;&#1096;&#1082;&#1077; &#1076;&#1077;&#1081;&#1110;&#1085; &#1086;&#1090;&#1099;&#1088;&#1084;&#1072;&#1091;&#1076;&#1099;.</span><span class="inline-lang" data-lang="ru">Don&#8217;t sit up late &#8212; &#1085;&#1077; &#1089;&#1080;&#1076;&#1080; &#1076;&#1086;&#1087;&#1086;&#1079;&#1076;&#1085;&#1072;. not to sit up late &#8212; &#1085;&#1077; &#1089;&#1080;&#1076;&#1077;&#1090;&#1100; &#1076;&#1086;&#1087;&#1086;&#1079;&#1076;&#1085;&#1072;.</span></div></div>
-            <div class="example-box"><p class="example-sentence">The doctor said to his patient not to sit up late. &#8594; &#8220;Don&#8217;t sit up late,&#8221; said the doctor.</p><p class="example-note"><span class="inline-lang" data-lang="kk">&#1058;&#1077;&#1089;&#1090;&#1090;&#1077; reported speech-&#1090;&#1077;&#1085; direct speech-&#1082;&#1077; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1082;&#1077;&#1088;&#1110;&#1089;&#1110;&#1085;&#1096;&#1077; &#1072;&#1091;&#1099;&#1089;&#1090;&#1099;&#1088;&#1091; &#1082;&#1077;&#1083;&#1091;&#1110; &#1084;&#1199;&#1084;&#1082;&#1110;&#1085;.</span><span class="inline-lang" data-lang="ru">&#1042; &#1090;&#1077;&#1089;&#1090;&#1077; &#1084;&#1086;&#1078;&#1077;&#1090; &#1073;&#1099;&#1090;&#1100; &#1087;&#1077;&#1088;&#1077;&#1093;&#1086;&#1076; &#1080;&#1079; &#1082;&#1086;&#1089;&#1074;&#1077;&#1085;&#1085;&#1086;&#1081; &#1088;&#1077;&#1095;&#1080; &#1074; &#1087;&#1088;&#1103;&#1084;&#1091;&#1102; &#1080;&#1083;&#1080; &#1085;&#1072;&#1086;&#1073;&#1086;&#1088;&#1086;&#1090;.</span></p></div>
-          </div>
-        </article>
+  <footer class="section">
+    <div class="page-shell content-card">
+      <p class="section-desc"><span class="inline-lang" data-lang="kk">General English Grammar | Part 3</span><span class="inline-lang" data-lang="ru">General English Grammar | Part 3</span></p>
+    </div>
+  </footer>
 
-        <article class="subunit" id="exam-exclamatory">
-          <div class="subunit-header"><div class="subunit-label">Exam Structures &#183; Sub-unit 3</div><h3>Exclamatory Sentences: What / How</h3><div class="subunit-translation"><span class="inline-lang" data-lang="kk">&#1051;&#1077;&#1087;&#1090;&#1110; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">&#1042;&#1086;&#1089;&#1082;&#1083;&#1080;&#1094;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1099;&#1077; &#1087;&#1088;&#1077;&#1076;&
+  <a class="back-to-top" href="#top" aria-label="Back to top">&#8593;</a>
+
+  <script>
+    function switchLanguage(lang) {
+      document.body.classList.remove('lang-kk', 'lang-ru');
+      document.body.classList.add('lang-' + lang);
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-set-lang') === lang);
+      });
+      try { localStorage.setItem('grammarPart3Lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchLanguage(btn.getAttribute('data-set-lang'));
+      });
+    });
+
+    try {
+      var savedLang = localStorage.getItem('grammarPart3Lang');
+      if (savedLang === 'kk' || savedLang === 'ru') switchLanguage(savedLang);
+      else switchLanguage('kk');
+    } catch (e) { switchLanguage('kk'); }
+
+    function checkTest(testId) {
+      var test = document.querySelector('[data-test="' + testId + '"]');
+      if (!test) return;
+      var questions = test.querySelectorAll('.question');
+      var score = 0;
+      questions.forEach(function(q) {
+        var answer = q.getAttribute('data-answer');
+        var selected = q.querySelector('input[type="radio"]:checked');
+        q.querySelectorAll('.option').forEach(function(opt) {
+          opt.classList.remove('correct', 'wrong');
+          var input = opt.querySelector('input');
+          if (!input) return;
+          if (input.value === answer) opt.classList.add('correct');
+          if (selected && input === selected && input.value !== answer) opt.classList.add('wrong');
+        });
+        if (selected && selected.value === answer) score++;
+      });
+      var result = document.querySelector('[data-result="' + testId + '"]');
+      if (result) {
+        result.classList.add('show');
+        var old = result.querySelector('.score-line');
+        if (old) old.remove();
+        var scoreLine = document.createElement('div');
+        scoreLine.className = 'score-line';
+        scoreLine.textContent = 'Score: ' + score + ' / ' + questions.length;
+        result.insertBefore(scoreLine, result.firstChild);
+      }
+    }
+
+    document.querySelectorAll('[data-check]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        checkTest(btn.getAttribute('data-check'));
+      });
+    });
+  </script>
+</body>
+</html>
