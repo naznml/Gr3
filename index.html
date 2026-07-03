@@ -1,1 +1,2203 @@
-html
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General English Grammar | Part 3</title>
+
+  <style>
+    :root {
+      --bg-1: #fff7fb;
+      --bg-2: #f4f0ff;
+      --bg-3: #eef7ff;
+      --text: #172033;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --primary: #7c3aed;
+      --primary-dark: #5b21b6;
+      --pink: #ec4899;
+      --blue: #2563eb;
+      --green: #16a34a;
+      --orange: #f97316;
+      --red: #ef4444;
+      --card: rgba(255, 255, 255, 0.82);
+      --border: rgba(124, 58, 237, 0.15);
+      --shadow: 0 16px 42px rgba(76, 29, 149, 0.11);
+      --radius-xl: 22px;
+      --radius-lg: 17px;
+      --radius-md: 13px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(236, 72, 153, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.14), transparent 30%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2) 48%, var(--bg-3));
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .page-shell {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.7);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 210px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 12px 24px rgba(124, 58, 237, 0.22);
+    }
+
+    .brand-title {
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      font-size: 15px;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .language-switch {
+      display: flex;
+      gap: 5px;
+      padding: 5px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 8px 24px rgba(76, 29, 149, 0.08);
+    }
+
+    .lang-btn {
+      border: 0;
+      cursor: pointer;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 12px;
+      transition: 0.22s ease;
+    }
+
+    .lang-btn.active {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 9px 20px rgba(124, 58, 237, 0.2);
+    }
+
+    .ghost-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      background: rgba(255, 255, 255, 0.65);
+      color: var(--primary-dark);
+      font-weight: 850;
+      font-size: 12px;
+      transition: 0.22s ease;
+    }
+
+    .ghost-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(76, 29, 149, 0.1);
+    }
+
+    .hero {
+      padding: 42px 0 24px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -70px -80px auto auto;
+      width: 230px;
+      height: 230px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.17), transparent 68%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.09);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5.4vw, 64px);
+      line-height: 0.96;
+      letter-spacing: -0.065em;
+      max-width: 760px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      max-width: 730px;
+      color: #4b5563;
+      font-size: 16px;
+      line-height: 1.65;
+      margin-top: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 13px;
+      border: 0;
+      cursor: pointer;
+      transition: 0.22s ease;
+    }
+
+    .primary-btn {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.22);
+    }
+
+    .secondary-btn {
+      color: var(--primary-dark);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.16);
+    }
+
+    .primary-btn:hover,
+    .secondary-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .stats-panel {
+      display: grid;
+      gap: 12px;
+    }
+
+    .stat-card {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 14px 34px rgba(76, 29, 149, 0.09);
+    }
+
+    .stat-number {
+      font-size: 30px;
+      font-weight: 950;
+      letter-spacing: -0.055em;
+      color: var(--primary-dark);
+    }
+
+    .stat-label {
+      color: #4b5563;
+      line-height: 1.5;
+      margin-top: 5px;
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 28px 0;
+      scroll-margin-top: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .section-kicker {
+      color: var(--primary-dark);
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      margin-bottom: 7px;
+    }
+
+    .section-title {
+      font-size: clamp(25px, 3.6vw, 42px);
+      line-height: 1.06;
+      letter-spacing: -0.052em;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 720px;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .rules-track-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .rules-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .rule-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 218px;
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      cursor: pointer;
+      transition: 0.22s ease;
+    }
+
+    .rule-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px rgba(76, 29, 149, 0.15);
+    }
+
+    .rule-card::after {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      right: -50px;
+      top: -54px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.17), transparent 66%);
+    }
+
+    .rule-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 21px;
+      font-weight: 950;
+      margin-bottom: 15px;
+      box-shadow: 0 12px 24px rgba(76, 29, 149, 0.17);
+    }
+
+    .rule-card:nth-child(1) .rule-icon {
+      background: linear-gradient(135deg, var(--pink), var(--primary));
+    }
+
+    .rule-card:nth-child(2) .rule-icon {
+      background: linear-gradient(135deg, var(--blue), var(--primary));
+    }
+
+    .rule-card:nth-child(3) .rule-icon {
+      background: linear-gradient(135deg, var(--green), var(--blue));
+    }
+
+    .rule-card h3 {
+      font-size: 23px;
+      letter-spacing: -0.043em;
+      margin-bottom: 4px;
+    }
+
+    .rule-mini {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .rule-card p {
+      color: #4b5563;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .rule-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 15px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      color: var(--primary-dark);
+      font-weight: 850;
+      font-size: 11px;
+    }
+
+    .sticky-nav {
+      position: relative;
+      z-index: 9;
+      padding: 9px 0;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 247, 251, 0.7);
+      border-top: 1px solid rgba(124, 58, 237, 0.08);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+    }
+
+    .nav-scroll {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+      display: flex;
+      gap: 9px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-item {
+      flex: 0 0 auto;
+      min-width: 122px;
+      border-radius: 16px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(124, 58, 237, 0.13);
+      transition: 0.22s ease;
+    }
+
+    .nav-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(76, 29, 149, 0.09);
+    }
+
+    .nav-main {
+      display: block;
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-sub {
+      display: block;
+      margin-top: 3px;
+      font-size: 10.5px;
+      color: var(--muted);
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .content-card {
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .grammar-section {
+      padding: 34px 0;
+      scroll-margin-top: 28px;
+    }
+
+    .grammar-hero {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+
+    .grammar-title-card,
+    .grammar-info-card {
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 14px 34px rgba(76, 29, 149, 0.09);
+    }
+
+    .grammar-title-card h2 {
+      font-size: clamp(30px, 4.6vw, 56px);
+      line-height: 0.96;
+      letter-spacing: -0.062em;
+    }
+
+    .grammar-title-card .translation {
+      margin-top: 10px;
+      color: var(--primary-dark);
+      font-weight: 950;
+      font-size: 16px;
+    }
+
+    .grammar-info-card p {
+      color: #4b5563;
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .subunit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .subunit-chip {
+      display: block;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(124, 58, 237, 0.07);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      transition: 0.22s ease;
+    }
+
+    .subunit-chip:hover {
+      transform: translateY(-2px);
+      background: rgba(124, 58, 237, 0.1);
+    }
+
+    .subunit-chip strong {
+      display: block;
+      font-size: 12px;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .subunit-chip span {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    .subunit {
+      margin-top: 20px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 14px 38px rgba(76, 29, 149, 0.09);
+      overflow: hidden;
+      scroll-margin-top: 28px;
+    }
+
+    .subunit-header {
+      padding: 20px 22px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(236, 72, 153, 0.08));
+      border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+    }
+
+    .subunit-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 9px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--primary-dark);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .subunit-header h3 {
+      font-size: clamp(22px, 2.8vw, 34px);
+      letter-spacing: -0.048em;
+      line-height: 1.06;
+    }
+
+    .subunit-translation {
+      color: var(--muted);
+      margin-top: 7px;
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .subunit-body {
+      padding: 22px;
+    }
+
+    .lesson-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 16px;
+    }
+
+    .lesson-box {
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .lesson-box h4 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+
+    .lesson-box p,
+    .lesson-box li {
+      color: #4b5563;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .lesson-box ul {
+      padding-left: 18px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .formula-box {
+      margin: 16px 0;
+      padding: 15px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.08), rgba(37, 99, 235, 0.07));
+      border: 1px dashed rgba(124, 58, 237, 0.28);
+      color: var(--primary-dark);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .formula-main {
+      font-weight: 950;
+      color: var(--primary-dark);
+    }
+
+    .formula-translation {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(124, 58, 237, 0.14);
+      color: #6b21a8;
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 750;
+    }
+
+    .formula-note {
+      margin: -6px 0 16px;
+      padding: 11px 14px;
+      border-radius: 16px;
+      color: #5b21b6;
+      background: rgba(124, 58, 237, 0.07);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      font-size: 12.5px;
+      line-height: 1.5;
+      font-weight: 750;
+    }
+
+    .example-box {
+      margin-top: 12px;
+      padding: 15px;
+      border-radius: 18px;
+      background: rgba(248, 250, 252, 0.84);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .example-sentence {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #111827;
+      margin-bottom: 7px;
+    }
+
+    .example-note {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .mark {
+      display: inline-block;
+      padding: 1px 6px 3px;
+      border-radius: 8px;
+      font-weight: 900;
+    }
+
+    .mark.adverb {
+      background: rgba(249, 115, 22, 0.16);
+      color: #c2410c;
+      box-shadow: inset 0 -2px 0 rgba(249, 115, 22, 0.24);
+    }
+
+    .mark.preposition {
+      background: rgba(37, 99, 235, 0.15);
+      color: #1d4ed8;
+      box-shadow: inset 0 -2px 0 rgba(37, 99, 235, 0.24);
+    }
+
+    .mark.conjunction {
+      background: rgba(22, 163, 74, 0.16);
+      color: #15803d;
+      box-shadow: inset 0 -2px 0 rgba(22, 163, 74, 0.24);
+    }
+
+    .mark.signal {
+      background: rgba(124, 58, 237, 0.16);
+      color: #5b21b6;
+      box-shadow: inset 0 -2px 0 rgba(124, 58, 237, 0.24);
+    }
+
+    .mistake-box {
+      margin-top: 16px;
+      border-radius: 18px;
+      padding: 15px;
+      background: rgba(254, 242, 242, 0.75);
+      border: 1px solid rgba(239, 68, 68, 0.18);
+    }
+
+    .mistake-box h4 {
+      color: #b91c1c;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .mistake-box p {
+      color: #7f1d1d;
+      line-height: 1.55;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .test-box {
+      margin-top: 18px;
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+    }
+
+    .test-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .test-header h4 {
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .mini-badge {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .question {
+      padding: 15px;
+      border-radius: 17px;
+      background: rgba(248, 250, 252, 0.84);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      margin-bottom: 12px;
+    }
+
+    .question p {
+      line-height: 1.55;
+      font-weight: 850;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .options {
+      display: grid;
+      gap: 8px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      background: rgba(255, 255, 255, 0.72);
+      cursor: pointer;
+      transition: 0.18s ease;
+      color: #374151;
+      line-height: 1.45;
+      font-weight: 650;
+      font-size: 13.5px;
+    }
+
+    .option:hover {
+      border-color: rgba(124, 58, 237, 0.34);
+      transform: translateY(-1px);
+    }
+
+    .option input {
+      margin-top: 3px;
+      accent-color: var(--primary);
+    }
+
+    .check-btn {
+      margin-top: 12px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 16px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      font-weight: 950;
+      box-shadow: 0 12px 26px rgba(124, 58, 237, 0.2);
+    }
+
+    .result-box {
+      display: none;
+      margin-top: 14px;
+      border-radius: 18px;
+      padding: 15px;
+      background: rgba(240, 253, 244, 0.78);
+      border: 1px solid rgba(22, 163, 74, 0.18);
+    }
+
+    .result-box.show {
+      display: block !important;
+    }
+
+    .result-box h5 {
+      color: #166534;
+      margin-bottom: 9px;
+      font-size: 15px;
+    }
+
+    .result-box p,
+    .result-box li {
+      color: #14532d;
+      line-height: 1.55;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .result-box ol {
+      padding-left: 18px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .option.correct {
+      border-color: rgba(22, 163, 74, 0.55) !important;
+      background: rgba(240, 253, 244, 0.9) !important;
+      color: #14532d !important;
+    }
+
+    .option.wrong {
+      border-color: rgba(239, 68, 68, 0.45) !important;
+      background: rgba(254, 242, 242, 0.9) !important;
+      color: #7f1d1d !important;
+    }
+
+    .score-line {
+      margin-bottom: 12px;
+      padding: 11px 13px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(22, 163, 74, 0.15);
+      font-weight: 950;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    body.lang-kk .lang-content[data-lang="kk"] {
+      display: block;
+    }
+
+    body.lang-ru .lang-content[data-lang="ru"] {
+      display: block;
+    }
+
+    .inline-lang {
+      display: none;
+    }
+
+    body.lang-kk .inline-lang[data-lang="kk"] {
+      display: inline;
+    }
+
+    body.lang-ru .inline-lang[data-lang="ru"] {
+      display: inline;
+    }
+
+    .block-lang {
+      display: none;
+    }
+
+    body.lang-kk .block-lang[data-lang="kk"] {
+      display: block;
+    }
+
+    body.lang-ru .block-lang[data-lang="ru"] {
+      display: block;
+    }
+
+
+
+    .rule-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-height: 74px;
+      overflow: hidden;
+      margin-top: 13px;
+    }
+
+    .rule-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      color: var(--primary-dark);
+      font-size: 11px;
+      font-weight: 850;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .map-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .map-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(124, 58, 237, 0.14);
+      box-shadow: 0 12px 28px rgba(76, 29, 149, 0.08);
+      transition: 0.22s ease;
+    }
+
+    .map-row:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(76, 29, 149, 0.12);
+    }
+
+    .map-num {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 10px 22px rgba(124, 58, 237, 0.2);
+    }
+
+    .map-content h3 {
+      font-size: 22px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 3px;
+    }
+
+    .map-subtitle {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .map-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .map-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.12);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 92px;
+      z-index: 9999;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--pink));
+      box-shadow: 0 14px 30px rgba(124, 58, 237, 0.28);
+      font-weight: 950;
+      font-size: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      transition: 0.22s ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grammar-hero,
+      .lesson-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .rules-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+      }
+
+      .rules-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .rule-card {
+        flex: 0 0 78%;
+        scroll-snap-align: start;
+      }
+
+      .subunit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page-shell,
+      .topbar-inner,
+      .nav-scroll {
+        width: min(100% - 20px, var(--max));
+      }
+
+      .topbar-inner {
+        min-height: auto;
+        padding: 10px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .brand {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .top-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .ghost-link {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 24px;
+      }
+
+      .hero-card,
+      .content-card,
+      .grammar-title-card,
+      .grammar-info-card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+      }
+
+      .hero-lead {
+        font-size: 14.5px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .rule-card {
+        flex-basis: 86%;
+        min-height: 205px;
+      }
+
+      .subunit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subunit-body {
+        padding: 16px;
+      }
+
+      .subunit-header {
+        padding: 18px;
+      }
+
+      .test-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .lesson-box,
+      .test-box,
+      .question,
+      .example-box,
+      .mistake-box {
+        padding: 14px;
+      }
+
+      .nav-item {
+        min-width: 112px;
+      }
+    }
+  </style>
+</head>
+
+<body class="lang-kk">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <div class="brand-logo">GE</div>
+        <div>
+          <div class="brand-title">General English</div>
+          <div class="brand-subtitle">
+            <span class="inline-lang" data-lang="kk">&#1052;&#1072;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1091;&#1088;&#1072;&#1171;&#1072; &#1076;&#1072;&#1081;&#1099;&#1085;&#1076;&#1099;&#1179;</span>
+            <span class="inline-lang" data-lang="ru">&#1055;&#1086;&#1076;&#1075;&#1086;&#1090;&#1086;&#1074;&#1082;&#1072; &#1082; &#1084;&#1072;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1090;&#1091;&#1088;&#1077;</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="top-actions">
+        <div class="language-switch" aria-label="Language switcher">
+          <button class="lang-btn active" type="button" data-set-lang="kk">&#1178;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072;</button>
+          <button class="lang-btn" type="button" data-set-lang="ru">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</button>
+        </div>
+
+        <a class="ghost-link" href="#rules-map">
+          <span>Grammar Map</span>
+          <span>&#8595;</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="page-shell hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">
+            <span>Part 3</span>
+            <span>&#8226;</span>
+            <span>Adverb &#183; Preposition &#183; Conjunction</span>
+          </div>
+
+          <h1>
+            Grammar Practice <br />
+            <span class="gradient-text">Part 3</span>
+          </h1>
+
+          <div class="lang-content" data-lang="kk">
+            <p class="hero-lead">
+              &#1041;&#1201;&#1083; &#1089;&#1072;&#1081;&#1090; General English &#1075;&#1088;&#1072;&#1084;&#1084;&#1072;&#1090;&#1080;&#1082;&#1072;&#1089;&#1099;&#1085;&#1099;&#1187; &#1199;&#1096;&#1110;&#1085;&#1096;&#1110; &#1073;&#1257;&#1083;&#1110;&#1084;&#1110;&#1085;&#1077; &#1072;&#1088;&#1085;&#1072;&#1083;&#1171;&#1072;&#1085;. &#1052;&#1201;&#1085;&#1076;&#1072; &#1199;&#1089;&#1090;&#1077;&#1091;,
+              &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075; &#1078;&#1241;&#1085;&#1077; &#1078;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;&#1090;&#1072;&#1088; &#1179;&#1072;&#1088;&#1072;&#1089;&#1090;&#1099;&#1088;&#1099;&#1083;&#1072;&#1076;&#1099;. &#1240;&#1088; sub-unit &#1110;&#1096;&#1110;&#1085;&#1076;&#1077; &#1179;&#1099;&#1089;&#1179;&#1072; &#1072;&#1171;&#1099;&#1083;&#1096;&#1099;&#1085;&#1096;&#1072; rule,
+              &#1179;&#1072;&#1079;&#1072;&#1179;&#1096;&#1072; &#1090;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;, &#1084;&#1099;&#1089;&#1072;&#1083;&#1076;&#1072;&#1088;, &#1078;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;&#1083;&#1077;&#1088; &#1078;&#1241;&#1085;&#1077; &#1090;&#1077;&#1089;&#1090;&#1090;&#1077;&#1088; &#1073;&#1086;&#1083;&#1072;&#1076;&#1099;.
+            </p>
+          </div>
+
+          <div class="lang-content" data-lang="ru">
+            <p class="hero-lead">
+              &#1069;&#1090;&#1086;&#1090; &#1089;&#1072;&#1081;&#1090; &#1087;&#1086;&#1089;&#1074;&#1103;&#1097;&#1105;&#1085; &#1090;&#1088;&#1077;&#1090;&#1100;&#1077;&#1081; &#1095;&#1072;&#1089;&#1090;&#1080; General English grammar. &#1047;&#1076;&#1077;&#1089;&#1100; &#1080;&#1079;&#1091;&#1095;&#1072;&#1102;&#1090;&#1089;&#1103; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103;,
+              &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;&#1080; &#1080; &#1089;&#1086;&#1102;&#1079;&#1099;. &#1042; &#1082;&#1072;&#1078;&#1076;&#1086;&#1084; sub-unit &#1073;&#1091;&#1076;&#1091;&#1090; &#1082;&#1086;&#1088;&#1086;&#1090;&#1082;&#1086;&#1077; &#1072;&#1085;&#1075;&#1083;&#1080;&#1081;&#1089;&#1082;&#1086;&#1077; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1086;, &#1088;&#1091;&#1089;&#1089;&#1082;&#1086;&#1077; &#1086;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;,
+              &#1087;&#1088;&#1080;&#1084;&#1077;&#1088;&#1099;, &#1095;&#1072;&#1089;&#1090;&#1099;&#1077; &#1086;&#1096;&#1080;&#1073;&#1082;&#1080; &#1080; &#1090;&#1077;&#1089;&#1090;&#1099;.
+            </p>
+          </div>
+
+          <div class="hero-buttons">
+            <a class="primary-btn" href="#rules-map">
+              <span class="inline-lang" data-lang="kk">&#1041;&#1072;&#1089;&#1090;&#1072;&#1091;</span>
+              <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1095;&#1072;&#1090;&#1100;</span>
+              <span>&#8594;</span>
+            </a>
+
+            <a class="secondary-btn" href="#adverb">
+              <span>Adverb</span>
+              <span>&#8595;</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="stats-panel">
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">
+              <span class="inline-lang" data-lang="kk">&#1073;&#1110;&#1088; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072;&#1171;&#1099; 3 &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; grammar block</span>
+              <span class="inline-lang" data-lang="ru">3 &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1093; grammar block &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">A1&#8211;B2</div>
+            <div class="stat-label">
+              <span class="inline-lang" data-lang="kk">&#1076;&#1077;&#1187;&#1075;&#1077;&#1081;&#1083;&#1077;&#1088; &#1073;&#1086;&#1081;&#1099;&#1085;&#1096;&#1072; &#1078;&#1199;&#1081;&#1077;&#1083;&#1110; &#1076;&#1072;&#1081;&#1099;&#1085;&#1076;&#1099;&#1179;</span>
+              <span class="inline-lang" data-lang="ru">&#1089;&#1080;&#1089;&#1090;&#1077;&#1084;&#1085;&#1072;&#1103; &#1087;&#1086;&#1076;&#1075;&#1086;&#1090;&#1086;&#1074;&#1082;&#1072; &#1087;&#1086; &#1091;&#1088;&#1086;&#1074;&#1085;&#1103;&#1084;</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number">Map</div>
+            <div class="stat-label">
+              <span class="inline-lang" data-lang="kk">&#1082;&#1072;&#1088;&#1090;&#1072;&#1076;&#1072; &#1241;&#1088; rule &#1072;&#1090;&#1072;&#1091;&#1099; &#1082;&#1257;&#1088;&#1110;&#1085;&#1077;&#1076;&#1110;</span>
+              <span class="inline-lang" data-lang="ru">&#1074; &#1082;&#1072;&#1088;&#1090;&#1077; &#1074;&#1080;&#1076;&#1085;&#1099; &#1085;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1103; &#1074;&#1089;&#1077;&#1093; rules</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="rules-map">
+      <div class="page-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">
+              <span class="inline-lang" data-lang="kk">&#1057;&#1072;&#1081;&#1090; &#1082;&#1072;&#1088;&#1090;&#1072;&#1089;&#1099;</span>
+              <span class="inline-lang" data-lang="ru">&#1050;&#1072;&#1088;&#1090;&#1072; &#1089;&#1072;&#1081;&#1090;&#1072;</span>
+            </div>
+            <h2 class="section-title">
+              <span class="inline-lang" data-lang="kk">&#1041;&#1201;&#1083; &#1089;&#1072;&#1081;&#1090;&#1090;&#1072; &#1257;&#1090;&#1077;&#1090;&#1110;&#1085; 3 &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1073;&#1257;&#1083;&#1110;&#1084;</span>
+              <span class="inline-lang" data-lang="ru">3 &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1093; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1072; &#1085;&#1072; &#1101;&#1090;&#1086;&#1084; &#1089;&#1072;&#1081;&#1090;&#1077;</span>
+            </h2>
+            <p class="section-desc">
+              <span class="inline-lang" data-lang="kk">&#1041;&#1201;&#1083; &#1082;&#1072;&#1088;&#1090;&#1072; &#1179;&#1099;&#1089;&#1179;&#1072; &#1085;&#1072;&#1074;&#1080;&#1075;&#1072;&#1094;&#1080;&#1103; &#1088;&#1077;&#1090;&#1110;&#1085;&#1076;&#1077; &#1073;&#1077;&#1088;&#1110;&#1083;&#1076;&#1110;. &#1240;&#1088; &#1078;&#1086;&#1083;&#1076;&#1072; &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; rule groups &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1110;&#1083;&#1077;&#1076;&#1110;.</span>
+              <span class="inline-lang" data-lang="ru">&#1069;&#1090;&#1072; &#1082;&#1072;&#1088;&#1090;&#1072; &#1089;&#1076;&#1077;&#1083;&#1072;&#1085;&#1072; &#1082;&#1072;&#1082; &#1082;&#1086;&#1084;&#1087;&#1072;&#1082;&#1090;&#1085;&#1072;&#1103; &#1085;&#1072;&#1074;&#1080;&#1075;&#1072;&#1094;&#1080;&#1103;. &#1042; &#1082;&#1072;&#1078;&#1076;&#1086;&#1081; &#1089;&#1090;&#1088;&#1086;&#1082;&#1077; &#1074;&#1080;&#1076;&#1085;&#1099; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1077; rule groups.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="map-list">
+          <a class="map-row" href="#adverb">
+            <div class="map-num">1</div>
+            <div class="map-content">
+              <h3>Adverb</h3>
+              <div class="map-subtitle"><span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span><span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span></div>
+              <div class="map-tags">
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Adverb vs Adjective &#8212; &#1199;&#1089;&#1090;&#1077;&#1091; &#1084;&#1077;&#1085; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084; &#1072;&#1081;&#1099;&#1088;&#1084;&#1072;&#1089;&#1099;</span><span class="inline-lang" data-lang="ru">Adverb vs Adjective &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1080; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Frequency &#8212; &#1078;&#1080;&#1110;&#1083;&#1110;&#1082;</span><span class="inline-lang" data-lang="ru">Frequency &#8212; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1100;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Time and Place &#8212; &#1091;&#1072;&#1179;&#1099;&#1090; &#1078;&#1241;&#1085;&#1077; &#1086;&#1088;&#1099;&#1085;</span><span class="inline-lang" data-lang="ru">Time and Place &#8212; &#1074;&#1088;&#1077;&#1084;&#1103; &#1080; &#1084;&#1077;&#1089;&#1090;&#1086;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Degree &#8212; &#1076;&#1241;&#1088;&#1077;&#1078;&#1077;</span><span class="inline-lang" data-lang="ru">Degree &#8212; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1100;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Position &#8212; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1075;&#1110; &#1086;&#1088;&#1085;&#1099;</span><span class="inline-lang" data-lang="ru">Position &#8212; &#1084;&#1077;&#1089;&#1090;&#1086; &#1074; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080;</span></span>
+              </div>
+            </div>
+          </a>
+
+          <a class="map-row" href="#preposition">
+            <div class="map-num">2</div>
+            <div class="map-content">
+              <h3>Preposition</h3>
+              <div class="map-subtitle"><span class="inline-lang" data-lang="kk">&#1040;&#1171;&#1099;&#1083;&#1096;&#1099;&#1085; &#1090;&#1110;&#1083;&#1110;&#1085;&#1076;&#1077;&#1075;&#1110; preposition</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span></div>
+              <div class="map-tags">
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Time &#8212; &#1091;&#1072;&#1179;&#1099;&#1090;: in, on, at</span><span class="inline-lang" data-lang="ru">Time &#8212; &#1074;&#1088;&#1077;&#1084;&#1103;: in, on, at</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Place &#8212; &#1086;&#1088;&#1099;&#1085;: in, on, at</span><span class="inline-lang" data-lang="ru">Place &#8212; &#1084;&#1077;&#1089;&#1090;&#1086;: in, on, at</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Movement &#8212; &#1073;&#1072;&#1171;&#1099;&#1090; &#1179;&#1086;&#1079;&#1171;&#1072;&#1083;&#1099;&#1089;&#1099;</span><span class="inline-lang" data-lang="ru">Movement &#8212; &#1076;&#1074;&#1080;&#1078;&#1077;&#1085;&#1080;&#1077;</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Fixed Combinations &#8212; &#1090;&#1201;&#1088;&#1072;&#1179;&#1090;&#1099; &#1090;&#1110;&#1088;&#1082;&#1077;&#1089;&#1090;&#1077;&#1088;</span><span class="inline-lang" data-lang="ru">Fixed Combinations &#8212; &#1091;&#1089;&#1090;&#1086;&#1081;&#1095;&#1080;&#1074;&#1099;&#1077; &#1089;&#1086;&#1095;&#1077;&#1090;&#1072;&#1085;&#1080;&#1103;</span></span>
+              </div>
+            </div>
+          </a>
+
+          <a class="map-row" href="#conjunction">
+            <div class="map-num">3</div>
+            <div class="map-content">
+              <h3>Conjunction</h3>
+              <div class="map-subtitle"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;</span><span class="inline-lang" data-lang="ru">&#1057;&#1086;&#1102;&#1079;</span></div>
+              <div class="map-tags">
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Coordinating &#8212; and, but, or, so</span><span class="inline-lang" data-lang="ru">Coordinating &#8212; and, but, or, so</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Subordinating &#8212; because, although, if</span><span class="inline-lang" data-lang="ru">Subordinating &#8212; because, although, if</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Correlative &#8212; both...and, either...or</span><span class="inline-lang" data-lang="ru">Correlative &#8212; both...and, either...or</span></span>
+                <span class="map-tag"><span class="inline-lang" data-lang="kk">Linkers &#8212; however, therefore, despite</span><span class="inline-lang" data-lang="ru">Linkers &#8212; however, therefore, despite</span></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="sticky-nav" aria-label="Grammar navigation">
+      <div class="nav-scroll">
+        <a class="nav-item" href="#rules-map"><span class="nav-main">Overview</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1087;&#1099; &#1082;&#1072;&#1088;&#1090;&#1072;</span><span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1097;&#1072;&#1103; &#1082;&#1072;&#1088;&#1090;&#1072;</span></span></a>
+        <a class="nav-item" href="#adverb"><span class="nav-main">Adverb</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span><span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span></span></a>
+        <a class="nav-item" href="#preposition"><span class="nav-main">Preposition</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">Preposition</span><span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1077;&#1076;&#1083;&#1086;&#1075;</span></span></a>
+        <a class="nav-item" href="#conjunction"><span class="nav-main">Conjunction</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1083;&#1171;&#1072;&#1091;&#1083;&#1099;&#1179;</span><span class="inline-lang" data-lang="ru">&#1057;&#1086;&#1102;&#1079;</span></span></a>
+        <a class="nav-item" href="#final-test"><span class="nav-main">Final Test</span><span class="nav-sub"><span class="inline-lang" data-lang="kk">&#1178;&#1086;&#1088;&#1099;&#1090;&#1099;&#1085;&#1076;&#1099; &#1090;&#1077;&#1089;&#1090;</span><span class="inline-lang" data-lang="ru">&#1048;&#1090;&#1086;&#1075;&#1086;&#1074;&#1099;&#1081; &#1090;&#1077;&#1089;&#1090;</span></span></a>
+      </div>
+    </nav>
+        <section class="grammar-section" id="adverb">
+      <div class="page-shell">
+        <div class="grammar-hero">
+          <div class="grammar-title-card">
+            <div class="section-kicker">Rule 8 &#183; A1&#8211;B1</div>
+            <h2>Adverb</h2>
+            <div class="translation">
+              <span class="inline-lang" data-lang="kk">&#1198;&#1089;&#1090;&#1077;&#1091;</span>
+              <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;</span>
+            </div>
+          </div>
+
+          <div class="grammar-info-card">
+            <div class="lang-content" data-lang="kk">
+              <p>
+                &#1041;&#1201;&#1083; &#1073;&#1257;&#1083;&#1110;&#1084;&#1076;&#1077; &#1072;&#1171;&#1099;&#1083;&#1096;&#1099;&#1085; &#1090;&#1110;&#1083;&#1110;&#1085;&#1076;&#1077;&#1075;&#1110; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088; &#1179;&#1072;&#1088;&#1072;&#1089;&#1090;&#1099;&#1088;&#1099;&#1083;&#1072;&#1076;&#1099;. &#1198;&#1089;&#1090;&#1077;&#1091; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1083;&#1072;&#1081;, &#1179;&#1072;&#1096;&#1072;&#1085;,
+                &#1179;&#1072;&#1081; &#1078;&#1077;&#1088;&#1076;&#1077;, &#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099; &#1078;&#1080;&#1110; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1179;&#1072;&#1085;&#1076;&#1072;&#1081; &#1076;&#1241;&#1088;&#1077;&#1078;&#1077;&#1076;&#1077; &#1078;&#1072;&#1089;&#1072;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
+                &#1045;&#1084;&#1090;&#1080;&#1093;&#1072;&#1085;&#1076;&#1072; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1199;&#1089;&#1090;&#1077;&#1091;&#1076;&#1110;&#1187; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;&#1085;&#1077;&#1085; &#1072;&#1081;&#1099;&#1088;&#1084;&#1072;&#1096;&#1099;&#1083;&#1099;&#1171;&#1099;, &#1089;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1075;&#1110; &#1086;&#1088;&#1085;&#1099; &#1078;&#1241;&#1085;&#1077; &#1078;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1110;&#1083;&#1077;&#1076;&#1110;.
+              </p>
+            </div>
+
+            <div class="lang-content" data-lang="ru">
+              <p>
+                &#1042; &#1101;&#1090;&#1086;&#1084; &#1088;&#1072;&#1079;&#1076;&#1077;&#1083;&#1077; &#1080;&#1079;&#1091;&#1095;&#1072;&#1102;&#1090;&#1089;&#1103; &#1072;&#1085;&#1075;&#1083;&#1080;&#1081;&#1089;&#1082;&#1080;&#1077; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103;. &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1082;&#1072;&#1082;, &#1082;&#1086;&#1075;&#1076;&#1072;, &#1075;&#1076;&#1077;,
+                &#1082;&#1072;&#1082; &#1095;&#1072;&#1089;&#1090;&#1086; &#1080;&#1083;&#1080; &#1074; &#1082;&#1072;&#1082;&#1086;&#1081; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1080; &#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;. &#1053;&#1072; &#1101;&#1082;&#1079;&#1072;&#1084;&#1077;&#1085;&#1077; &#1095;&#1072;&#1089;&#1090;&#1086; &#1087;&#1088;&#1086;&#1074;&#1077;&#1088;&#1103;&#1102;&#1090;&#1089;&#1103;
+                &#1086;&#1090;&#1083;&#1080;&#1095;&#1080;&#1077; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1086;&#1090; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1075;&#1086;, &#1084;&#1077;&#1089;&#1090;&#1086; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080; &#1080; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080;.
+              </p>
+            </div>
+
+            <div class="subunit-grid">
+              <a class="subunit-chip" href="#adverb-manner">
+                <strong>Adverbs of Manner</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">&#1178;&#1080;&#1084;&#1099;&#1083;-&#1089;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+                  <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1086;&#1073;&#1088;&#1072;&#1079;&#1072; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103;</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#adverb-frequency">
+                <strong>Adverbs of Frequency</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+                  <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080;</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#adverb-time-place">
+                <strong>Time & Place</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">&#1059;&#1072;&#1179;&#1099;&#1090; &#1078;&#1241;&#1085;&#1077; &#1086;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+                  <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1080; &#1084;&#1077;&#1089;&#1090;&#1072;</span>
+                </span>
+              </a>
+
+              <a class="subunit-chip" href="#adverb-degree">
+                <strong>Adverbs of Degree</strong>
+                <span>
+                  <span class="inline-lang" data-lang="kk">&#1044;&#1241;&#1088;&#1077;&#1078;&#1077; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+                  <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1080;</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <article class="subunit" id="adverb-manner">
+          <div class="subunit-header">
+            <div class="subunit-label">Adverb &#183; Sub-unit 1</div>
+            <h3>Adverbs of Manner</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">&#1178;&#1080;&#1084;&#1099;&#1083;-&#1089;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+              <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1086;&#1073;&#1088;&#1072;&#1079;&#1072; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103;</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Adverbs of manner describe how an action is done. They usually answer the question &#8220;How?&#8221;
+                  Many adverbs of manner are formed by adding -ly to an adjective.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    &#1178;&#1080;&#1084;&#1099;&#1083;-&#1089;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1083;&#1072;&#1081; &#1078;&#1072;&#1089;&#1072;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;. &#1054;&#1083; &#8220;&#1179;&#1072;&#1083;&#1072;&#1081;?&#8221; &#1076;&#1077;&#1075;&#1077;&#1085; &#1089;&#1201;&#1088;&#1072;&#1179;&#1179;&#1072; &#1078;&#1072;&#1091;&#1072;&#1087; &#1073;&#1077;&#1088;&#1077;&#1076;&#1110;.
+                    &#1052;&#1099;&#1089;&#1072;&#1083;&#1099;: <b>carefully &#8212; &#1084;&#1201;&#1179;&#1080;&#1103;&#1090;</b>, <b>quickly &#8212; &#1090;&#1077;&#1079;</b>, <b>clearly &#8212; &#1072;&#1085;&#1099;&#1179;</b>.
+                    &#1050;&#1257;&#1087; &#1078;&#1072;&#1171;&#1076;&#1072;&#1081;&#1076;&#1072; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;&#1075;&#1077; <b>-ly</b> &#1078;&#1072;&#1083;&#1171;&#1072;&#1085;&#1072;&#1076;&#1099;: careful &#8594; carefully.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1086;&#1073;&#1088;&#1072;&#1079;&#1072; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1082;&#1072;&#1082; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1077;&#1090;&#1089;&#1103; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;. &#1054;&#1085;&#1086; &#1086;&#1090;&#1074;&#1077;&#1095;&#1072;&#1077;&#1090; &#1085;&#1072; &#1074;&#1086;&#1087;&#1088;&#1086;&#1089; &#8220;&#1082;&#1072;&#1082;?&#8221;.
+                    &#1053;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;: <b>carefully &#8212; &#1074;&#1085;&#1080;&#1084;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;</b>, <b>quickly &#8212; &#1073;&#1099;&#1089;&#1090;&#1088;&#1086;</b>, <b>clearly &#8212; &#1103;&#1089;&#1085;&#1086;</b>.
+                    &#1063;&#1072;&#1089;&#1090;&#1086; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1086;&#1073;&#1088;&#1072;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; &#1076;&#1086;&#1073;&#1072;&#1074;&#1083;&#1077;&#1085;&#1080;&#1077;&#1084; <b>-ly</b> &#1082; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1084;&#1091;: careful &#8594; carefully.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-main">
+                adjective + -ly = adverb &#183; careful &#8594; carefully &#183; slow &#8594; slowly &#183; clear &#8594; clearly
+              </div>
+              <div class="formula-translation">
+                <span class="inline-lang" data-lang="kk">
+                  &#1052;&#1072;&#1171;&#1099;&#1085;&#1072;&#1089;&#1099;: &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;&#1075;&#1077; -ly &#1179;&#1086;&#1089;&#1099;&#1083;&#1171;&#1072;&#1085;&#1076;&#1072;, &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1083;&#1072;&#1081; &#1078;&#1072;&#1089;&#1072;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1073;&#1110;&#1083;&#1076;&#1110;&#1088;&#1077;&#1090;&#1110;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091; &#1087;&#1072;&#1081;&#1076;&#1072; &#1073;&#1086;&#1083;&#1072;&#1076;&#1099;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  &#1047;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077;: &#1082;&#1086;&#1075;&#1076;&#1072; &#1082; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1084;&#1091; &#1076;&#1086;&#1073;&#1072;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; -ly, &#1087;&#1086;&#1083;&#1091;&#1095;&#1072;&#1077;&#1090;&#1089;&#1103; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1086;&#1077; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1082;&#1072;&#1082; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1103;&#1077;&#1090;&#1089;&#1103; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;.
+                </span>
+              </div>
+            </div>
+            <div class="formula-note">
+              <span class="inline-lang" data-lang="kk">
+                &#1041;&#1201;&#1083; &#1179;&#1099;&#1089;&#1179;&#1072; &#1199;&#1083;&#1075;&#1110; adjective &#1087;&#1077;&#1085; adverb &#1072;&#1081;&#1099;&#1088;&#1084;&#1072;&#1096;&#1099;&#1083;&#1099;&#1171;&#1099;&#1085; &#1082;&#1257;&#1088;&#1091;&#1075;&#1077; &#1082;&#1257;&#1084;&#1077;&#1082;&#1090;&#1077;&#1089;&#1077;&#1076;&#1110;: adjective &#1079;&#1072;&#1090;&#1090;&#1099; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;, adverb &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;.
+              </span>
+              <span class="inline-lang" data-lang="ru">
+                &#1069;&#1090;&#1072; &#1089;&#1093;&#1077;&#1084;&#1072; &#1087;&#1086;&#1084;&#1086;&#1075;&#1072;&#1077;&#1090; &#1091;&#1074;&#1080;&#1076;&#1077;&#1090;&#1100; &#1088;&#1072;&#1079;&#1085;&#1080;&#1094;&#1091; &#1084;&#1077;&#1078;&#1076;&#1091; adjective &#1080; adverb: adjective &#1086;&#1087;&#1080;&#1089;&#1099;&#1074;&#1072;&#1077;&#1090; &#1087;&#1088;&#1077;&#1076;&#1084;&#1077;&#1090;, adverb &#1086;&#1087;&#1080;&#1089;&#1099;&#1074;&#1072;&#1077;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;.
+              </span>
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">Adjective vs Adverb</span>
+                  <span class="inline-lang" data-lang="ru">Adjective vs Adverb</span>
+                </h4>
+                <ul>
+                  <li>She is a careful student. &#8212; careful &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1076;&#1110; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;.</li>
+                  <li>She works carefully. &#8212; carefully &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;.</li>
+                  <li>He is a quick learner. &#8212; quick &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1076;&#1110; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;.</li>
+                  <li>He learns quickly. &#8212; quickly &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;.</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1045;&#1088;&#1077;&#1082;&#1096;&#1077; &#1092;&#1086;&#1088;&#1084;&#1072;&#1083;&#1072;&#1088;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1089;&#1086;&#1073;&#1099;&#1077; &#1092;&#1086;&#1088;&#1084;&#1099;</span>
+                </h4>
+                <ul>
+                  <li>good &#8594; well: She speaks English well.</li>
+                  <li>fast &#8594; fast: He runs fast.</li>
+                  <li>hard &#8594; hard: She studies hard.</li>
+                  <li>late &#8594; late: They arrived late.</li>
+                  <li>early &#8594; early: We started early.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                The student answered the question <span class="mark adverb">carefully</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  carefully &#8212; &#1078;&#1072;&#1091;&#1072;&#1087; &#1073;&#1077;&#1088;&#1091; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1110;&#1085;&#1110;&#1187; &#1179;&#1072;&#1083;&#1072;&#1081; &#1078;&#1072;&#1089;&#1072;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;. &#1057;&#1086;&#1085;&#1076;&#1099;&#1179;&#1090;&#1072;&#1085; &#1073;&#1201;&#1083; &#1199;&#1089;&#1090;&#1077;&#1091;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  carefully &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1082;&#1072;&#1082; &#1073;&#1099;&#1083;&#1086; &#1074;&#1099;&#1087;&#1086;&#1083;&#1085;&#1077;&#1085;&#1086; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077; answered. &#1055;&#1086;&#1101;&#1090;&#1086;&#1084;&#1091; &#1101;&#1090;&#1086; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077;.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                She speaks English <span class="mark adverb">well</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  well &#8212; good &#1089;&#1257;&#1079;&#1110;&#1085;&#1110;&#1187; &#1199;&#1089;&#1090;&#1077;&#1091; &#1092;&#1086;&#1088;&#1084;&#1072;&#1089;&#1099;. &#8220;Speaks English good&#8221; &#1076;&#1077;&#1087; &#1072;&#1081;&#1090;&#1091; &#1179;&#1072;&#1090;&#1077;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  well &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1085;&#1072;&#1103; &#1092;&#1086;&#1088;&#1084;&#1072; &#1086;&#1090; good. &#1053;&#1077;&#1083;&#1100;&#1079;&#1103; &#1075;&#1086;&#1074;&#1086;&#1088;&#1080;&#1090;&#1100; &#8220;speaks English good&#8221;.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span>
+                <span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  &#8220;She speaks English good&#8221; &#1076;&#1077;&#1087; &#1072;&#1081;&#1090;&#1091; &#1179;&#1072;&#1090;&#1077;. Good &#8212; &#1089;&#1099;&#1085; &#1077;&#1089;&#1110;&#1084;, &#1072;&#1083; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1091; &#1199;&#1096;&#1110;&#1085;
+                  <b>well</b> &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;: <b>She speaks English well</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  &#8220;She speaks English good&#8221; &#8212; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;. Good &#8212; &#1087;&#1088;&#1080;&#1083;&#1072;&#1075;&#1072;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077;, &#1072; &#1076;&#1083;&#1103; &#1086;&#1087;&#1080;&#1089;&#1072;&#1085;&#1080;&#1103; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103; &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103;
+                  <b>well</b>: <b>She speaks English well</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="adverb-manner-test">
+              <div class="test-header">
+                <h4>Mini test &#183; Adverbs of Manner</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>1. Choose the correct form: &#8220;She answered the question ___.&#8221;</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-man-1" value="a"> careful</label>
+                  <label class="option"><input type="radio" name="adv-man-1" value="b"> care</label>
+                  <label class="option"><input type="radio" name="adv-man-1" value="c"> carefulness</label>
+                  <label class="option"><input type="radio" name="adv-man-1" value="d"> carefully</label>
+                  <label class="option"><input type="radio" name="adv-man-1" value="e"> caring</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>2. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-man-2" value="a"> He speaks English good.</label>
+                  <label class="option"><input type="radio" name="adv-man-2" value="b"> He speaks English well.</label>
+                  <label class="option"><input type="radio" name="adv-man-2" value="c"> He speaks English betterly.</label>
+                  <label class="option"><input type="radio" name="adv-man-2" value="d"> He speaks English goodly.</label>
+                  <label class="option"><input type="radio" name="adv-man-2" value="e"> He speaks English wellness.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>3. Choose the correct adverb form of &#8220;quick&#8221;.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-man-3" value="a"> quickness</label>
+                  <label class="option"><input type="radio" name="adv-man-3" value="b"> quickful</label>
+                  <label class="option"><input type="radio" name="adv-man-3" value="c"> quicked</label>
+                  <label class="option"><input type="radio" name="adv-man-3" value="d"> quickerly</label>
+                  <label class="option"><input type="radio" name="adv-man-3" value="e"> quickly</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>4. Choose the correct form: &#8220;The test was easy, so they finished it ___.&#8221;</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-man-4" value="a"> quickly</label>
+                  <label class="option"><input type="radio" name="adv-man-4" value="b"> quick</label>
+                  <label class="option"><input type="radio" name="adv-man-4" value="c"> quickness</label>
+                  <label class="option"><input type="radio" name="adv-man-4" value="d"> quicker</label>
+                  <label class="option"><input type="radio" name="adv-man-4" value="e"> quickest</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-man-5" value="a"> She is a carefully student.</label>
+                  <label class="option"><input type="radio" name="adv-man-5" value="b"> She is a well student.</label>
+                  <label class="option"><input type="radio" name="adv-man-5" value="c"> She is a careful student.</label>
+                  <label class="option"><input type="radio" name="adv-man-5" value="d"> She is a carefulness student.</label>
+                  <label class="option"><input type="radio" name="adv-man-5" value="e"> She is a caringly student.</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="adverb-manner-test">
+                <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088;&#1076;&#1099; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1091;</span>
+                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1080;&#1090;&#1100; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;</span>
+              </button>
+
+              <div class="result-box" data-result="adverb-manner-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1084;&#1077;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>carefully</b> &#1076;&#1201;&#1088;&#1099;&#1089;, &#1089;&#1077;&#1073;&#1077;&#1073;&#1110; answered &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1110;&#1085; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1087; &#1090;&#1201;&#1088;.</li>
+                    <li><b>well</b> &#1076;&#1201;&#1088;&#1099;&#1089;, &#1089;&#1077;&#1073;&#1077;&#1073;&#1110; speak &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1110;&#1085; &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1091; &#1199;&#1096;&#1110;&#1085; good &#1077;&#1084;&#1077;&#1089;, well &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1072;&#1076;&#1099;.</li>
+                    <li><b>quickly</b> &#8212; quick &#1089;&#1257;&#1079;&#1110;&#1085;&#1110;&#1187; &#1199;&#1089;&#1090;&#1077;&#1091; &#1092;&#1086;&#1088;&#1084;&#1072;&#1089;&#1099;.</li>
+                    <li><b>quickly</b> &#1076;&#1201;&#1088;&#1099;&#1089;, &#1089;&#1077;&#1073;&#1077;&#1073;&#1110; finished &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1110;&#1085;&#1110;&#1187; &#1179;&#1072;&#1083;&#1072;&#1081; &#1078;&#1072;&#1089;&#1072;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.</li>
+                    <li><b>careful student</b> &#1076;&#1201;&#1088;&#1099;&#1089;, &#1089;&#1077;&#1073;&#1077;&#1073;&#1110; student &#1079;&#1072;&#1090; &#1077;&#1089;&#1110;&#1084;&#1110;&#1085; adjective &#1089;&#1080;&#1087;&#1072;&#1090;&#1090;&#1072;&#1081;&#1076;&#1099;.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>carefully</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; &#1086;&#1087;&#1080;&#1089;&#1099;&#1074;&#1072;&#1077;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077; answered.</li>
+                    <li><b>well</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; &#1076;&#1083;&#1103; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1103; speak &#1080;&#1089;&#1087;&#1086;&#1083;&#1100;&#1079;&#1091;&#1077;&#1090;&#1089;&#1103; well, &#1085;&#1077; good.</li>
+                    <li><b>quickly</b> &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1085;&#1072;&#1103; &#1092;&#1086;&#1088;&#1084;&#1072; &#1086;&#1090; quick.</li>
+                    <li><b>quickly</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1082;&#1072;&#1082; &#1086;&#1085;&#1080; finished.</li>
+                    <li><b>careful student</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1087;&#1086;&#1090;&#1086;&#1084;&#1091; &#1095;&#1090;&#1086; &#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1080;&#1090;&#1077;&#1083;&#1100;&#1085;&#1086;&#1077; student &#1086;&#1087;&#1080;&#1089;&#1099;&#1074;&#1072;&#1077;&#1090; adjective.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="adverb-frequency">
+          <div class="subunit-header">
+            <div class="subunit-label">Adverb &#183; Sub-unit 2</div>
+            <h3>Adverbs of Frequency</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+              <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080;</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Adverbs of frequency show how often something happens. They usually come before the main verb,
+                  but after the verb &#8220;be&#8221;.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    &#1046;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099; &#1078;&#1080;&#1110; &#1073;&#1086;&#1083;&#1072;&#1090;&#1099;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;. &#1052;&#1099;&#1089;&#1072;&#1083;&#1099;:
+                    <b>always &#8212; &#1241;&#1088;&#1179;&#1072;&#1096;&#1072;&#1085;</b>, <b>usually &#8212; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077;</b>, <b>often &#8212; &#1078;&#1080;&#1110;</b>,
+                    <b>sometimes &#8212; &#1082;&#1077;&#1081;&#1076;&#1077;</b>, <b>rarely &#8212; &#1089;&#1080;&#1088;&#1077;&#1082;</b>, <b>never &#8212; &#1077;&#1096;&#1179;&#1072;&#1096;&#1072;&#1085;</b>.
+                    &#1054;&#1083;&#1072;&#1088; &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082;&#1090;&#1110;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072;, &#1073;&#1110;&#1088;&#1072;&#1179; <b>be</b> &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1075;&#1110;&#1085;&#1077;&#1085; &#1082;&#1077;&#1081;&#1110;&#1085; &#1090;&#1201;&#1088;&#1072;&#1076;&#1099;.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090;, &#1082;&#1072;&#1082; &#1095;&#1072;&#1089;&#1090;&#1086; &#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;. &#1053;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;:
+                    <b>always &#8212; &#1074;&#1089;&#1077;&#1075;&#1076;&#1072;</b>, <b>usually &#8212; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086;</b>, <b>often &#8212; &#1095;&#1072;&#1089;&#1090;&#1086;</b>,
+                    <b>sometimes &#8212; &#1080;&#1085;&#1086;&#1075;&#1076;&#1072;</b>, <b>rarely &#8212; &#1088;&#1077;&#1076;&#1082;&#1086;</b>, <b>never &#8212; &#1085;&#1080;&#1082;&#1086;&#1075;&#1076;&#1072;</b>.
+                    &#1054;&#1085;&#1080; &#1089;&#1090;&#1086;&#1103;&#1090; &#1087;&#1077;&#1088;&#1077;&#1076; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1084; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1086;&#1084;, &#1085;&#1086; &#1087;&#1086;&#1089;&#1083;&#1077; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1072; <b>be</b>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-main">
+                I always study &#183; She often reads &#183; They never arrive late &#183; He is usually ready
+              </div>
+              <div class="formula-translation">
+                <span class="inline-lang" data-lang="kk">
+                  &#1052;&#1072;&#1171;&#1099;&#1085;&#1072;&#1089;&#1099;: &#1052;&#1077;&#1085; &#1241;&#1088;&#1179;&#1072;&#1096;&#1072;&#1085; &#1086;&#1179;&#1080;&#1084;&#1099;&#1085; &#183; &#1054;&#1083; &#1078;&#1080;&#1110; &#1086;&#1179;&#1080;&#1076;&#1099; &#183; &#1054;&#1083;&#1072;&#1088; &#1077;&#1096;&#1179;&#1072;&#1096;&#1072;&#1085; &#1082;&#1077;&#1096; &#1082;&#1077;&#1083;&#1084;&#1077;&#1081;&#1076;&#1110; &#183; &#1054;&#1083; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077; &#1076;&#1072;&#1081;&#1099;&#1085; &#1073;&#1086;&#1083;&#1072;&#1076;&#1099;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  &#1047;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077;: &#1071; &#1074;&#1089;&#1077;&#1075;&#1076;&#1072; &#1091;&#1095;&#1091;&#1089;&#1100; &#183; &#1054;&#1085;&#1072; &#1095;&#1072;&#1089;&#1090;&#1086; &#1095;&#1080;&#1090;&#1072;&#1077;&#1090; &#183; &#1054;&#1085;&#1080; &#1085;&#1080;&#1082;&#1086;&#1075;&#1076;&#1072; &#1085;&#1077; &#1086;&#1087;&#1072;&#1079;&#1076;&#1099;&#1074;&#1072;&#1102;&#1090; &#183; &#1054;&#1085; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1075;&#1086;&#1090;&#1086;&#1074;.
+                </span>
+              </div>
+            </div>
+            <div class="formula-note">
+              <span class="inline-lang" data-lang="kk">
+                &#1053;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082; &#1073;&#1086;&#1083;&#1089;&#1072;, &#1078;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082;&#1090;&#1110;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;&#1072;&#1076;&#1099;. Be &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1075;&#1110; &#1073;&#1086;&#1083;&#1089;&#1072;, &#1078;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110; be-&#1076;&#1077;&#1085; &#1082;&#1077;&#1081;&#1110;&#1085; &#1090;&#1201;&#1088;&#1072;&#1076;&#1099;.
+              </span>
+              <span class="inline-lang" data-lang="ru">
+                &#1045;&#1089;&#1083;&#1080; &#1077;&#1089;&#1090;&#1100; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1081; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;, &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080; &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1077;&#1088;&#1077;&#1076; &#1085;&#1080;&#1084;. &#1045;&#1089;&#1083;&#1080; &#1077;&#1089;&#1090;&#1100; be, &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1086;&#1089;&#1083;&#1077; be.
+              </span>
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110;&#1083;&#1110;&#1082; &#1096;&#1082;&#1072;&#1083;&#1072;&#1089;&#1099;</span>
+                  <span class="inline-lang" data-lang="ru">&#1064;&#1082;&#1072;&#1083;&#1072; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080;</span>
+                </h4>
+                <ul>
+                  <li>always &#8212; 100% &#8212; &#1241;&#1088;&#1179;&#1072;&#1096;&#1072;&#1085; / &#1074;&#1089;&#1077;&#1075;&#1076;&#1072;</li>
+                  <li>usually &#8212; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077; / &#1086;&#1073;&#1099;&#1095;&#1085;&#1086;</li>
+                  <li>often &#8212; &#1078;&#1080;&#1110; / &#1095;&#1072;&#1089;&#1090;&#1086;</li>
+                  <li>sometimes &#8212; &#1082;&#1077;&#1081;&#1076;&#1077; / &#1080;&#1085;&#1086;&#1075;&#1076;&#1072;</li>
+                  <li>rarely / seldom &#8212; &#1089;&#1080;&#1088;&#1077;&#1082; / &#1088;&#1077;&#1076;&#1082;&#1086;</li>
+                  <li>never &#8212; 0% &#8212; &#1077;&#1096;&#1179;&#1072;&#1096;&#1072;&#1085; / &#1085;&#1080;&#1082;&#1086;&#1075;&#1076;&#1072;</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1057;&#1257;&#1081;&#1083;&#1077;&#1084;&#1076;&#1077;&#1075;&#1110; &#1086;&#1088;&#1085;&#1099;</span>
+                  <span class="inline-lang" data-lang="ru">&#1052;&#1077;&#1089;&#1090;&#1086; &#1074; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1080;</span>
+                </h4>
+                <ul>
+                  <li>She often checks her answers.</li>
+                  <li>They usually study in the evening.</li>
+                  <li>He is always polite.</li>
+                  <li>The tasks are sometimes difficult.</li>
+                  <li>I have never seen this rule before.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                She <span class="mark adverb">usually</span> revises grammar before the test.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  usually &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082; revises &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;. &#1041;&#1201;&#1083; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077; &#1073;&#1086;&#1083;&#1072;&#1090;&#1099;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  usually &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1077;&#1088;&#1077;&#1076; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1084; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1086;&#1084; revises. &#1054;&#1085;&#1086; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1095;&#1090;&#1086; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077; &#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086;.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                The teacher is <span class="mark adverb">always</span> helpful.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  always be &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1075;&#1110;&#1085;&#1077;&#1085; &#1082;&#1077;&#1081;&#1110;&#1085; &#1090;&#1201;&#1088;: is always helpful.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  always &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1086;&#1089;&#1083;&#1077; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1072; be: is always helpful.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span>
+                <span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  &#8220;She studies always&#8221; &#1076;&#1077;&#1087; &#1072;&#1081;&#1090;&#1091; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077; &#1076;&#1201;&#1088;&#1099;&#1089; &#1077;&#1084;&#1077;&#1089;. &#1053;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082;&#1087;&#1077;&#1085; &#1076;&#1201;&#1088;&#1099;&#1089; &#1086;&#1088;&#1099;&#1085;:
+                  <b>She always studies</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  &#8220;She studies always&#8221; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1085;&#1077;&#1074;&#1077;&#1088;&#1085;&#1086;. &#1057; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1084; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1086;&#1084; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1099;&#1081; &#1087;&#1086;&#1088;&#1103;&#1076;&#1086;&#1082;:
+                  <b>She always studies</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="adverb-frequency-test">
+              <div class="test-header">
+                <h4>Mini test &#183; Adverbs of Frequency</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>1. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-freq-1" value="a"> She always studies in the evening.</label>
+                  <label class="option"><input type="radio" name="adv-freq-1" value="b"> She studies always in the evening.</label>
+                  <label class="option"><input type="radio" name="adv-freq-1" value="c"> Always she studies in the evening.</label>
+                  <label class="option"><input type="radio" name="adv-freq-1" value="d"> She is studies always in the evening.</label>
+                  <label class="option"><input type="radio" name="adv-freq-1" value="e"> She always is study in the evening.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>2. Choose the correct sentence with &#8220;be&#8221;.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-freq-2" value="a"> He always is ready.</label>
+                  <label class="option"><input type="radio" name="adv-freq-2" value="b"> Always he is ready.</label>
+                  <label class="option"><input type="radio" name="adv-freq-2" value="c"> He ready always is.</label>
+                  <label class="option"><input type="radio" name="adv-freq-2" value="d"> He is always ready.</label>
+                  <label class="option"><input type="radio" name="adv-freq-2" value="e"> He is ready always usually.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>3. Which adverb means 0% frequency?</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-freq-3" value="a"> often</label>
+                  <label class="option"><input type="radio" name="adv-freq-3" value="b"> never</label>
+                  <label class="option"><input type="radio" name="adv-freq-3" value="c"> usually</label>
+                  <label class="option"><input type="radio" name="adv-freq-3" value="d"> always</label>
+                  <label class="option"><input type="radio" name="adv-freq-3" value="e"> sometimes</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>4. Choose the correct form: &#8220;They ___ arrive late.&#8221;</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-freq-4" value="a"> are never to</label>
+                  <label class="option"><input type="radio" name="adv-freq-4" value="b"> arrive never</label>
+                  <label class="option"><input type="radio" name="adv-freq-4" value="c"> never are</label>
+                  <label class="option"><input type="radio" name="adv-freq-4" value="d"> late never</label>
+                  <label class="option"><input type="radio" name="adv-freq-4" value="e"> never</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-freq-5" value="a"> I have seen never this rule before.</label>
+                  <label class="option"><input type="radio" name="adv-freq-5" value="b"> I never have seen this rule before.</label>
+                  <label class="option"><input type="radio" name="adv-freq-5" value="c"> I have never seen this rule before.</label>
+                  <label class="option"><input type="radio" name="adv-freq-5" value="d"> I have seen this rule never before.</label>
+                  <label class="option"><input type="radio" name="adv-freq-5" value="e"> Never I have seen this rule before.</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="adverb-frequency-test">
+                <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088;&#1076;&#1099; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1091;</span>
+                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1080;&#1090;&#1100; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;</span>
+              </button>
+
+              <div class="result-box" data-result="adverb-frequency-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1084;&#1077;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>She always studies</b> &#1076;&#1201;&#1088;&#1099;&#1089;, &#1078;&#1080;&#1110;&#1083;&#1110;&#1082; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110; &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082;&#1090;&#1110;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;.</li>
+                    <li><b>He is always ready</b> &#1076;&#1201;&#1088;&#1099;&#1089;, always be &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1075;&#1110;&#1085;&#1077;&#1085; &#1082;&#1077;&#1081;&#1110;&#1085; &#1090;&#1201;&#1088;.</li>
+                    <li><b>never</b> 0% &#1078;&#1080;&#1110;&#1083;&#1110;&#1082;&#1090;&#1110; &#1073;&#1110;&#1083;&#1076;&#1110;&#1088;&#1077;&#1076;&#1110;.</li>
+                    <li><b>They never arrive late</b> &#1076;&#1201;&#1088;&#1099;&#1089;, never &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; &#1077;&#1090;&#1110;&#1089;&#1090;&#1110;&#1082;&#1090;&#1110;&#1187; &#1072;&#1083;&#1076;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;.</li>
+                    <li><b>have never seen</b> &#1076;&#1201;&#1088;&#1099;&#1089;, never &#1082;&#1257;&#1084;&#1077;&#1082;&#1096;&#1110; have &#1084;&#1077;&#1085; &#1085;&#1077;&#1075;&#1110;&#1079;&#1075;&#1110; seen &#1072;&#1088;&#1072;&#1089;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>She always studies</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1080; &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1077;&#1088;&#1077;&#1076; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1084; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1086;&#1084;.</li>
+                    <li><b>He is always ready</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, always &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1086;&#1089;&#1083;&#1077; be.</li>
+                    <li><b>never</b> &#1086;&#1079;&#1085;&#1072;&#1095;&#1072;&#1077;&#1090; &#1095;&#1072;&#1089;&#1090;&#1086;&#1090;&#1085;&#1086;&#1089;&#1090;&#1100; 0%.</li>
+                    <li><b>They never arrive late</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, never &#1089;&#1090;&#1086;&#1080;&#1090; &#1087;&#1077;&#1088;&#1077;&#1076; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1084; &#1075;&#1083;&#1072;&#1075;&#1086;&#1083;&#1086;&#1084;.</li>
+                    <li><b>have never seen</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, never &#1089;&#1090;&#1086;&#1080;&#1090; &#1084;&#1077;&#1078;&#1076;&#1091; auxiliary have &#1080; &#1086;&#1089;&#1085;&#1086;&#1074;&#1085;&#1099;&#1084; seen.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="adverb-time-place">
+          <div class="subunit-header">
+            <div class="subunit-label">Adverb &#183; Sub-unit 3</div>
+            <h3>Adverbs of Time and Place</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">&#1059;&#1072;&#1179;&#1099;&#1090; &#1078;&#1241;&#1085;&#1077; &#1086;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+              <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1080; &#1084;&#1077;&#1089;&#1090;&#1072;</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Adverbs of time show when something happens. Adverbs of place show where something happens.
+                  They often come at the end of a sentence, but they can also appear at the beginning for emphasis.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    &#1059;&#1072;&#1179;&#1099;&#1090; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1096;&#1072;&#1085; &#1073;&#1086;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;: <b>today &#8212; &#1073;&#1199;&#1075;&#1110;&#1085;</b>,
+                    <b>yesterday &#8212; &#1082;&#1077;&#1096;&#1077;</b>, <b>soon &#8212; &#1078;&#1072;&#1179;&#1099;&#1085;&#1076;&#1072;</b>, <b>already &#8212; &#1179;&#1072;&#1079;&#1110;&#1088;&#1076;&#1110;&#1187; &#1257;&#1079;&#1110;&#1085;&#1076;&#1077;</b>.
+                    &#1054;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1081; &#1078;&#1077;&#1088;&#1076;&#1077; &#1073;&#1086;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;:
+                    <b>here &#8212; &#1086;&#1089;&#1099;&#1085;&#1076;&#1072;</b>, <b>there &#8212; &#1086;&#1085;&#1076;&#1072;</b>, <b>outside &#8212; &#1089;&#1099;&#1088;&#1090;&#1090;&#1072;</b>.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;: <b>today &#8212; &#1089;&#1077;&#1075;&#1086;&#1076;&#1085;&#1103;</b>,
+                    <b>yesterday &#8212; &#1074;&#1095;&#1077;&#1088;&#1072;</b>, <b>soon &#8212; &#1089;&#1082;&#1086;&#1088;&#1086;</b>, <b>already &#8212; &#1091;&#1078;&#1077;</b>.
+                    &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1084;&#1077;&#1089;&#1090;&#1072; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090;, &#1075;&#1076;&#1077; &#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;:
+                    <b>here &#8212; &#1079;&#1076;&#1077;&#1089;&#1100;</b>, <b>there &#8212; &#1090;&#1072;&#1084;</b>, <b>outside &#8212; &#1089;&#1085;&#1072;&#1088;&#1091;&#1078;&#1080;</b>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="formula-box">
+              <div class="formula-main">
+                Time: today, yesterday, soon, already, recently &#183; Place: here, there, outside, everywhere
+              </div>
+              <div class="formula-translation">
+                <span class="inline-lang" data-lang="kk">
+                  &#1052;&#1072;&#1171;&#1099;&#1085;&#1072;&#1089;&#1099;: &#1091;&#1072;&#1179;&#1099;&#1090; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1179;&#1072;&#1096;&#1072;&#1085; &#1077;&#1082;&#1077;&#1085;&#1110;&#1085;, &#1086;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1179;&#1072;&#1081; &#1078;&#1077;&#1088;&#1076;&#1077; &#1077;&#1082;&#1077;&#1085;&#1110;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  &#1047;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077;: &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090; &#1082;&#1086;&#1075;&#1076;&#1072;, &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1084;&#1077;&#1089;&#1090;&#1072; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090; &#1075;&#1076;&#1077;.
+                </span>
+              </div>
+            </div>
+            <div class="formula-note">
+              <span class="inline-lang" data-lang="kk">
+                &#1059;&#1072;&#1179;&#1099;&#1090; &#1087;&#1077;&#1085; &#1086;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1082;&#1257;&#1073;&#1110;&#1085;&#1077; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084; &#1089;&#1086;&#1187;&#1099;&#1085;&#1076;&#1072; &#1090;&#1201;&#1088;&#1072;&#1076;&#1099;: I studied yesterday. We waited outside.
+              </span>
+              <span class="inline-lang" data-lang="ru">
+                &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080; &#1080; &#1084;&#1077;&#1089;&#1090;&#1072; &#1095;&#1072;&#1089;&#1090;&#1086; &#1089;&#1090;&#1086;&#1103;&#1090; &#1074; &#1082;&#1086;&#1085;&#1094;&#1077; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103;: I studied yesterday. We waited outside.
+              </span>
+            </div>
+
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1059;&#1072;&#1179;&#1099;&#1090; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+                  <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;</span>
+                </h4>
+                <ul>
+                  <li>I submitted the form yesterday.</li>
+                  <li>She will call soon.</li>
+                  <li>They have already finished the task.</li>
+                  <li>Recently, I have revised grammar.</li>
+                  <li>We are taking the test today.</li>
+                </ul>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1054;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+                  <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1084;&#1077;&#1089;&#1090;&#1072;</span>
+                </h4>
+                <ul>
+                  <li>Please sit here.</li>
+                  <li>The students waited outside.</li>
+                  <li>I looked everywhere for my notes.</li>
+                  <li>She went upstairs.</li>
+                  <li>The answer is there.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                They submitted the application <span class="mark adverb">yesterday</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  yesterday &#8212; &#1091;&#1072;&#1179;&#1099;&#1090; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110;. &#1054;&#1083; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1096;&#1072;&#1085; &#1073;&#1086;&#1083;&#1171;&#1072;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  yesterday &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1074;&#1088;&#1077;&#1084;&#1077;&#1085;&#1080;. &#1054;&#1085;&#1086; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1082;&#1086;&#1075;&#1076;&#1072; &#1087;&#1088;&#1086;&#1080;&#1079;&#1086;&#1096;&#1083;&#1086; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;.
+                </span>
+              </p>
+            </div>
+
+            <div class="example-box">
+              <p class="example-sentence">
+                Please wait <span class="mark adverb">outside</span>.
+              </p>
+              <p class="example-note">
+                <span class="inline-lang" data-lang="kk">
+                  outside &#8212; &#1086;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110;. &#1054;&#1083; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1081; &#1078;&#1077;&#1088;&#1076;&#1077; &#1073;&#1086;&#1083;&#1072;&#1090;&#1099;&#1085;&#1099;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  outside &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1084;&#1077;&#1089;&#1090;&#1072;. &#1054;&#1085;&#1086; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090;, &#1075;&#1076;&#1077; &#1085;&#1091;&#1078;&#1085;&#1086; &#1078;&#1076;&#1072;&#1090;&#1100;.
+                </span>
+              </p>
+            </div>
+
+            <div class="mistake-box">
+              <h4>
+                <span class="inline-lang" data-lang="kk">&#1046;&#1080;&#1110; &#1179;&#1072;&#1090;&#1077;</span>
+                <span class="inline-lang" data-lang="ru">&#1063;&#1072;&#1089;&#1090;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;</span>
+              </h4>
+              <p>
+                <span class="inline-lang" data-lang="kk">
+                  &#8220;I yesterday studied&#8221; &#1076;&#1077;&#1087; &#1072;&#1081;&#1090;&#1091; &#1241;&#1076;&#1077;&#1090;&#1090;&#1077; &#1090;&#1072;&#1073;&#1080;&#1171;&#1080; &#1077;&#1084;&#1077;&#1089;. &#1050;&#1257;&#1073;&#1110;&#1085;&#1077; &#1076;&#1201;&#1088;&#1099;&#1089; &#1086;&#1088;&#1099;&#1085;:
+                  <b>I studied yesterday</b>. &#1041;&#1110;&#1088;&#1072;&#1179; &#1077;&#1088;&#1077;&#1082;&#1096;&#1077; &#1085;&#1072;&#1079;&#1072;&#1088; &#1072;&#1091;&#1076;&#1072;&#1088;&#1091; &#1199;&#1096;&#1110;&#1085; &#1089;&#1257;&#1081;&#1083;&#1077;&#1084; &#1073;&#1072;&#1089;&#1099;&#1085;&#1076;&#1072; &#1076;&#1072; &#1082;&#1077;&#1083;&#1077; &#1072;&#1083;&#1072;&#1076;&#1099;:
+                  <b>Yesterday, I studied grammar</b>.
+                </span>
+                <span class="inline-lang" data-lang="ru">
+                  &#8220;I yesterday studied&#8221; &#1086;&#1073;&#1099;&#1095;&#1085;&#1086; &#1079;&#1074;&#1091;&#1095;&#1080;&#1090; &#1085;&#1077;&#1077;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;. &#1063;&#1072;&#1097;&#1077; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1099;&#1081; &#1087;&#1086;&#1088;&#1103;&#1076;&#1086;&#1082;:
+                  <b>I studied yesterday</b>. &#1053;&#1086; &#1076;&#1083;&#1103; &#1072;&#1082;&#1094;&#1077;&#1085;&#1090;&#1072; &#1084;&#1086;&#1078;&#1085;&#1086; &#1087;&#1086;&#1089;&#1090;&#1072;&#1074;&#1080;&#1090;&#1100; &#1074; &#1085;&#1072;&#1095;&#1072;&#1083;&#1086;:
+                  <b>Yesterday, I studied grammar</b>.
+                </span>
+              </p>
+            </div>
+
+            <div class="test-box" data-test="adverb-time-place-test">
+              <div class="test-header">
+                <h4>Mini test &#183; Time & Place Adverbs</h4>
+                <span class="mini-badge">5 questions</span>
+              </div>
+
+              <div class="question" data-answer="e">
+                <p>1. Choose the adverb of time.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-tp-1" value="a"> outside</label>
+                  <label class="option"><input type="radio" name="adv-tp-1" value="b"> here</label>
+                  <label class="option"><input type="radio" name="adv-tp-1" value="c"> carefully</label>
+                  <label class="option"><input type="radio" name="adv-tp-1" value="d"> well</label>
+                  <label class="option"><input type="radio" name="adv-tp-1" value="e"> yesterday</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="b">
+                <p>2. Choose the adverb of place.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-tp-2" value="a"> soon</label>
+                  <label class="option"><input type="radio" name="adv-tp-2" value="b"> everywhere</label>
+                  <label class="option"><input type="radio" name="adv-tp-2" value="c"> already</label>
+                  <label class="option"><input type="radio" name="adv-tp-2" value="d"> recently</label>
+                  <label class="option"><input type="radio" name="adv-tp-2" value="e"> today</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="a">
+                <p>3. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-tp-3" value="a"> I studied grammar yesterday.</label>
+                  <label class="option"><input type="radio" name="adv-tp-3" value="b"> I yesterday studied grammar.</label>
+                  <label class="option"><input type="radio" name="adv-tp-3" value="c"> I grammar yesterday studied.</label>
+                  <label class="option"><input type="radio" name="adv-tp-3" value="d"> Yesterday studied I grammar.</label>
+                  <label class="option"><input type="radio" name="adv-tp-3" value="e"> I studied yesterday grammar.</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="d">
+                <p>4. Choose the correct form: &#8220;Please sit ___.&#8221;</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-tp-4" value="a"> yesterday</label>
+                  <label class="option"><input type="radio" name="adv-tp-4" value="b"> soon</label>
+                  <label class="option"><input type="radio" name="adv-tp-4" value="c"> already</label>
+                  <label class="option"><input type="radio" name="adv-tp-4" value="d"> here</label>
+                  <label class="option"><input type="radio" name="adv-tp-4" value="e"> recently</label>
+                </div>
+              </div>
+
+              <div class="question" data-answer="c">
+                <p>5. Choose the correct sentence.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="adv-tp-5" value="a"> She will soonly call.</label>
+                  <label class="option"><input type="radio" name="adv-tp-5" value="b"> She will call soonly.</label>
+                  <label class="option"><input type="radio" name="adv-tp-5" value="c"> She will call soon.</label>
+                  <label class="option"><input type="radio" name="adv-tp-5" value="d"> She soon will calls.</label>
+                  <label class="option"><input type="radio" name="adv-tp-5" value="e"> She will sooning call.</label>
+                </div>
+              </div>
+
+              <button class="check-btn" type="button" data-check="adverb-time-place-test">
+                <span class="inline-lang" data-lang="kk">&#1046;&#1072;&#1091;&#1072;&#1087;&#1090;&#1072;&#1088;&#1076;&#1099; &#1090;&#1077;&#1082;&#1089;&#1077;&#1088;&#1091;</span>
+                <span class="inline-lang" data-lang="ru">&#1055;&#1088;&#1086;&#1074;&#1077;&#1088;&#1080;&#1090;&#1100; &#1086;&#1090;&#1074;&#1077;&#1090;&#1099;</span>
+              </button>
+
+              <div class="result-box" data-result="adverb-time-place-test">
+                <h5>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1084;&#1077;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h5>
+
+                <div class="lang-content" data-lang="kk">
+                  <ol>
+                    <li><b>yesterday</b> &#1091;&#1072;&#1179;&#1099;&#1090;&#1090;&#1099; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.</li>
+                    <li><b>everywhere</b> &#1086;&#1088;&#1099;&#1085;&#1076;&#1099; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.</li>
+                    <li><b>I studied grammar yesterday</b> &#1090;&#1072;&#1073;&#1080;&#1171;&#1080; &#1089;&#1257;&#1079; &#1090;&#1241;&#1088;&#1090;&#1110;&#1073;&#1110;.</li>
+                    <li><b>here</b> &#1086;&#1088;&#1099;&#1085; &#1199;&#1089;&#1090;&#1077;&#1091;&#1110;, &#8220;&#1086;&#1089;&#1099;&#1085;&#1076;&#1072;&#8221; &#1076;&#1077;&#1075;&#1077;&#1085; &#1084;&#1072;&#1171;&#1099;&#1085;&#1072;.</li>
+                    <li><b>soon</b> &#1076;&#1201;&#1088;&#1099;&#1089;, soonly &#1092;&#1086;&#1088;&#1084;&#1072;&#1089;&#1099; &#1179;&#1086;&#1083;&#1076;&#1072;&#1085;&#1099;&#1083;&#1084;&#1072;&#1081;&#1076;&#1099;.</li>
+                  </ol>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <ol>
+                    <li><b>yesterday</b> &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090; &#1074;&#1088;&#1077;&#1084;&#1103;.</li>
+                    <li><b>everywhere</b> &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1077;&#1090; &#1084;&#1077;&#1089;&#1090;&#1086;.</li>
+                    <li><b>I studied grammar yesterday</b> &#8212; &#1077;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1099;&#1081; &#1087;&#1086;&#1088;&#1103;&#1076;&#1086;&#1082; &#1089;&#1083;&#1086;&#1074;.</li>
+                    <li><b>here</b> &#8212; &#1085;&#1072;&#1088;&#1077;&#1095;&#1080;&#1077; &#1084;&#1077;&#1089;&#1090;&#1072;, &#1079;&#1085;&#1072;&#1095;&#1080;&#1090; &#8220;&#1079;&#1076;&#1077;&#1089;&#1100;&#8221;.</li>
+                    <li><b>soon</b> &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;, &#1092;&#1086;&#1088;&#1084;&#1099; soonly &#1085;&#1077;&#1090;.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="subunit" id="adverb-degree">
+          <div class="subunit-header">
+            <div class="subunit-label">Adverb &#183; Sub-unit 4</div>
+            <h3>Adverbs of Degree</h3>
+            <div class="subunit-translation">
+              <span class="inline-lang" data-lang="kk">&#1044;&#1241;&#1088;&#1077;&#1078;&#1077; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110;</span>
+              <span class="inline-lang" data-lang="ru">&#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1080;</span>
+            </div>
+          </div>
+
+          <div class="subunit-body">
+            <div class="lesson-layout">
+              <div class="lesson-box">
+                <h4>English rule</h4>
+                <p>
+                  Adverbs of degree show the intensity or level of an adjective, adverb, or verb.
+                  Common examples are very, too, enough, quite, almost, completely, and extremely.
+                </p>
+              </div>
+
+              <div class="lesson-box">
+                <h4>
+                  <span class="inline-lang" data-lang="kk">&#1058;&#1199;&#1089;&#1110;&#1085;&#1076;&#1110;&#1088;&#1091;</span>
+                  <span class="inline-lang" data-lang="ru">&#1054;&#1073;&#1098;&#1103;&#1089;&#1085;&#1077;&#1085;&#1080;&#1077;</span>
+                </h4>
+
+                <div class="lang-content" data-lang="kk">
+                  <p>
+                    &#1044;&#1241;&#1088;&#1077;&#1078;&#1077; &#1199;&#1089;&#1090;&#1077;&#1091;&#1083;&#1077;&#1088;&#1110; &#1073;&#1110;&#1088; &#1089;&#1072;&#1087;&#1072;&#1085;&#1099;&#1187; &#1085;&#1077;&#1084;&#1077;&#1089;&#1077; &#1241;&#1088;&#1077;&#1082;&#1077;&#1090;&#1090;&#1110;&#1187; &#1179;&#1072;&#1085;&#1096;&#1072;&#1083;&#1099;&#1179;&#1090;&#1099; &#1082;&#1199;&#1096;&#1090;&#1110; &#1077;&#1082;&#1077;&#1085;&#1110;&#1085; &#1082;&#1257;&#1088;&#1089;&#1077;&#1090;&#1077;&#1076;&#1110;.
+                    &#1052;&#1099;&#1089;&#1072;&#1083;&#1099;: <b>very difficult &#8212; &#1257;&#1090;&#1077; &#1179;&#1080;&#1099;&#1085;</b>, <b>too late &#8212; &#1090;&#1099;&#1084; &#1082;&#1077;&#1096;</b>,
+                    <b>good enough &#8212; &#1078;&#1077;&#1090;&#1082;&#1110;&#1083;&#1110;&#1082;&#1090;&#1110; &#1078;&#1072;&#1179;&#1089;&#1099;</b>, <b>almost finished &#8212; &#1076;&#1077;&#1088;&#1083;&#1110;&#1082; &#1072;&#1103;&#1179;&#1090;&#1072;&#1083;&#1076;&#1099;</b>.
+                  </p>
+                </div>
+
+                <div class="lang-content" data-lang="ru">
+                  <p>
+                    &#1053;&#1072;&#1088;&#1077;&#1095;&#1080;&#1103; &#1089;&#1090;&#1077;&#1087;&#1077;&#1085;&#1080; &#1087;&#1086;&#1082;&#1072;&#1079;&#1099;&#1074;&#1072;&#1102;&#1090;, &#1085;&#1072;&#1089;&#1082;&#1086;&#1083;&#1100;&#1082;&#1086; &#1089;&#1080;&#1083;&#1100;&#1085;&#1099;&#1084; &#1103;&#1074;&#1083;&#1103;&#1077;&#1090;&#1089;&#1103; &#1082;&#1072;&#1095;&#1077;&#1089;&#1090;&#1074;&#1086; &#1080;&#1083;&#1080; &#1076;&#1077;&#1081;&#1089;&#1090;&#1074;&#1080;&#1077;.
+                    &#1053;&#1072;&#1
+                    
